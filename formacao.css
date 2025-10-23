@@ -136,14 +136,13 @@
   color: #223;
 }
 
-/* Lista de disciplinas */
+/* --- Lista de disciplinas (CORREÇÃO AQUI) --- */
 .card-conteudo ul {
   list-style: none;
   padding-left: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Duas colunas */
-  gap: 10px 20px;
   margin: 0;
+  column-count: 2; /* Define 2 colunas */
+  column-gap: 20px; /* Espaço entre as colunas */
 }
 
 .card-conteudo ul li {
@@ -151,6 +150,12 @@
   padding-left: 20px;
   font-size: 0.95em;
   color: #334;
+  margin-bottom: 8px; /* Adiciona espaço entre itens na vertical */
+
+  /* Impede que um item da lista quebre entre as colunas */
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid-column;
 }
 
 /* Marcador (bullet) customizado */
@@ -165,9 +170,9 @@
 
 /* Responsividade */
 @media (max-width: 700px) {
-  /* Uma coluna em telas menores */
+  /* Uma coluna em telas menores (CORREÇÃO AQUI) */
   .card-conteudo ul {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
 
   .card-titulo h3 {
