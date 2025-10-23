@@ -29,6 +29,7 @@ This website was designed as a bilingual platform (Portuguese 🇧🇷 / English
 ---
 
 ## 🧩 Structure
+```text
 clusterjedi.github.io/
 │
 ├── index.html → main bilingual portfolio page
@@ -37,7 +38,7 @@ clusterjedi.github.io/
 ├── PT-Curriculo_matheus_21.10.2025_DS.pdf → résumé (Portuguese)
 ├── EN-Curriculo_matheus_21.10.2025.pdf → résumé (English)
 └── README.md → this file
-
+```
 
 ---
 
@@ -88,6 +89,7 @@ Este site foi desenvolvido como uma plataforma bilíngue (Português 🇧🇷 / 
 ---
 
 ## 🧩 Estrutura
+```text
 clusterjedi.github.io/
 │
 ├── index.html → página principal bilíngue do portfólio
@@ -96,7 +98,7 @@ clusterjedi.github.io/
 ├── PT-Curriculo_matheus_21.10.2025_DS.pdf → currículo em português
 ├── EN-Curriculo_matheus_21.10.2025.pdf → currículo em inglês
 └── README.md → este arquivo
-
+```
 
 ---
 
