@@ -62,3 +62,42 @@ main{margin-top:18px}
 /* small helpers */
 a.link{color:var(--accent-2);text-decoration:none}
 a.link:hover{text-decoration:underline}
+
+/* --- link inline (adicionado) --- */
+.inline-link {
+  color: var(--accent-2);
+  font-weight: 600;
+  text-decoration: none;
+  /* Adiciona um sublinhado sutil para indicar o link */
+  border-bottom: 2px solid rgba(41, 128, 185, 0.2);
+  transition: all 0.2s ease;
+}
+.inline-link:hover {
+  text-decoration: none;
+  background-color: rgba(41, 128, 185, 0.08);
+}
+
+/* --- Rodapé (Footer) --- */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar a linha em telas pequenas */
+  justify-content: space-between; /* Alinha os itens (span e nav) nas pontas */
+  align-items: center;
+  gap: 10px; /* Espaço entre os itens se quebrar a linha */
+  
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #e0e6ec; /* Usei uma cor padrão do seu layout */
+  color: var(--muted, #556);
+  font-size: 0.9rem;
+}
+
+.site-footer nav {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Espaço entre os links */
+}
+
+.site-footer nav a {
+  color: var(--muted, #556);
+}
