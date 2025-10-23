@@ -1,0 +1,176 @@
+/* --- Estilos para a página de Formação --- */
+
+/* Cabeçalho da Página */
+.page-header {
+  padding: 20px;
+  background: var(--card);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(20,30,40,0.04);
+}
+
+.page-header h1 {
+  margin: 10px 0;
+  color: #223;
+  font-size: 2em;
+}
+
+.page-header p {
+  font-size: 1.1em;
+  color: var(--muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Grupo de Formação (Pós, Graduação) */
+.formacao-grupo h2 {
+  font-size: 1.6em;
+  color: #223;
+  border-bottom: 2px solid #e0e6ec;
+  padding-bottom: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Card de Formação (Accordion) */
+.card-formacao {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(20,30,40,0.04);
+  margin-bottom: 16px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Aberto */
+.card-formacao[open] {
+  border: 1px solid #dbe6f0;
+  box-shadow: 0 8px 24px rgba(20,30,40,0.08);
+}
+
+.card-formacao[open] summary {
+  border-bottom: 1px solid #e0e6ec;
+}
+
+/* Título do Card (o <summary>) */
+.card-formacao summary {
+  padding: 20px;
+  cursor: pointer;
+  list-style: none; /* Remove a seta padrão */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.card-formacao summary:hover {
+  background: #fcfdfe;
+}
+
+/* Remove a seta no Chrome/Safari */
+.card-formacao summary::-webkit-details-marker {
+  display: none;
+}
+
+.card-titulo h3 {
+  margin: 0;
+  font-size: 1.25em;
+  color: var(--accent-2);
+}
+.card-titulo span {
+  font-size: 1em;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Ícone de + e - (seta) */
+.card-formacao summary::after {
+  content: '+';
+  font-size: 1.8em;
+  font-weight: 300;
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.card-formacao[open] summary::after {
+  content: '−'; /* Símbolo de menos */
+  transform: rotate(180deg);
+}
+
+
+/* Conteúdo do Card (o <div> interno) */
+.card-conteudo {
+  padding: 20px;
+  border-top: 1px solid #e0e6ec;
+}
+
+.card-formacao[open] .card-conteudo {
+  border-top: none; /* O summary já tem a borda */
+  padding-top: 0;
+}
+
+.card-conteudo p {
+  font-size: 1.05em;
+  color: var(--muted);
+  margin-top: 0;
+  border-bottom: 1px dashed #e0e6ec;
+  padding-bottom: 15px;
+}
+
+.card-conteudo h4 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #223;
+}
+
+/* Lista de disciplinas */
+.card-conteudo ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas */
+  gap: 10px 20px;
+  margin: 0;
+}
+
+.card-conteudo ul li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.95em;
+  color: #334;
+}
+
+/* Marcador (bullet) customizado */
+.card-conteudo ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+  /* Uma coluna em telas menores */
+  .card-conteudo ul {
+    grid-template-columns: 1fr;
+  }
+
+  .card-titulo h3 {
+    font-size: 1.1em;
+  }
+}
