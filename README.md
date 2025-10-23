@@ -1,3 +1,43 @@
+# 🌐 Matheus Trindade — Data Scientist & Full Stack Developer
+
+**Website:** [https://clusterjedi.github.io](https://clusterjedi.github.io)  
+**LinkedIn:** [https://www.linkedin.com/in/trindadde](https://www.linkedin.com/in/trindadde)
+
+Personal portfolio and professional website of **Matheus Trindade**, integrating Data Science, Full Stack Development, and Applied Economics.  
+The site presents background information, selected projects, academic interests, and ways to connect for collaborations or freelance work.
+
+---
+
+## 🧠 Overview
+
+This website was designed as a bilingual platform (Portuguese 🇧🇷 / English 🇬🇧) to:
+
+- Showcase professional trajectory and education.  
+- Present selected projects in **Data Science**, **Web Development**, and **Applied Economics**.  
+- Highlight professional goals and research interests.  
+- Provide an accessible contact channel for potential partnerships or global freelance opportunities.
+
+---
+
+## 🧰 Tech Stack
+
+- **HTML5**, **CSS3**, **JavaScript (Vanilla)**
+- **Responsive Design** (mobile-friendly layout)
+- **Multi-language support (PT/EN)** via client-side script
+- Hosted on **GitHub Pages**
+
+---
+
+## 🧩 Structure
+clusterjedi.github.io/
+│
+├── index.html → main bilingual portfolio page
+├── estilos.css → styles and responsive layout
+├── img1.png → profile image
+├── PT-Curriculo_matheus_21.10.2025_DS.pdf → résumé (Portuguese)
+├── EN-Curriculo_matheus_21.10.2025.pdf → résumé (English)
+└── README.md → this file
+
 
 ---
 
@@ -48,7 +88,6 @@ Este site foi desenvolvido como uma plataforma bilíngue (Português 🇧🇷 / 
 ---
 
 ## 🧩 Estrutura
-
 clusterjedi.github.io/
 │
 ├── index.html → página principal bilíngue do portfólio
@@ -57,6 +96,7 @@ clusterjedi.github.io/
 ├── PT-Curriculo_matheus_21.10.2025_DS.pdf → currículo em português
 ├── EN-Curriculo_matheus_21.10.2025.pdf → currículo em inglês
 └── README.md → este arquivo
+
 
 ---
 
