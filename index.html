@@ -39,13 +39,11 @@
 
   <main class="container">
 
-    <!-- Sobre -->
     <section class="card" id="about">
       <h2 data-i18n="about_title">Sobre</h2>
       <p id="about_text"></p>
     </section>
 
-    <!-- Formação e Competências -->
     <section class="grid">
       <div class="card" id="education">
         <h3 data-i18n="education_title">Formação</h3>
@@ -58,7 +56,6 @@
       </div>
     </section>
 
-    <!-- Projetos -->
     <section class="card" id="projects">
       <h3 data-i18n="projects_title">Projetos selecionados</h3>
       <p id="projects_text"></p>
@@ -68,13 +65,11 @@
       </ul>
     </section>
 
-    <!-- Metas Profissionais e Interesses -->
     <section class="card" id="goals">
       <h3 data-i18n="goals_title">Metas Profissionais e Interesses</h3>
       <ul id="goals_list"></ul>
     </section>
 
-    <!-- Contato -->
     <section class="card" id="contact">
       <h3 data-i18n="contact_title">Contato</h3>
       <p id="contact_text"></p>
@@ -210,14 +205,26 @@ function render(lang = 'en') {
   document.getElementById('lang-pt').classList.toggle('active', lang === 'pt');
   document.getElementById('lang-en').classList.toggle('active', lang === 'en');
   document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
+
+  // --- INÍCIO DA ALTERAÇÃO SOLICITADA ---
+  // Atualiza os estilos dos botões de currículo com base no idioma
+  const cvPtBtn = document.getElementById('cv-pt');
+  const cvEnBtn = document.getElementById('cv-en');
+  
+  // A classe 'btn' é o estilo ativo (sólido)
+  // A classe 'btn-outline' é o estilo inativo (contorno)
+  
+  // Se lang for 'pt', 'btn-outline' é false para cvPtBtn e true para cvEnBtn
+  cvPtBtn.classList.toggle('btn-outline', lang !== 'pt');
+  cvEnBtn.classList.toggle('btn-outline', lang !== 'en');
+  // --- FIM DA ALTERAÇÃO SOLICITADA ---
 }
 
 document.getElementById('lang-pt').addEventListener('click', () => render('pt'));
 document.getElementById('lang-en').addEventListener('click', () => render('en'));
 document.getElementById('year').innerText = new Date().getFullYear();
-render('en');
+render('en'); // A chamada inicial agora define 'EN' como padrão
 </script>
 
 </body>
 </html>
-
