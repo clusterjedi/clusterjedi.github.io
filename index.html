@@ -104,7 +104,7 @@ const content = {
   pt: {
     role_text: "Cientista de Dados · Desenvolvedor Full Stack",
     about_title: "Sobre Mim",
-    about_text: `Sou Matheus Trindade, bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC). Trabalho como servidor público e desenvolvo projetos de ciência de dados e desenvolvimento web com foco em impacto social e aplicações práticas.`,
+    about_text: `Sou <a href="https://www.linkedin.com/in/trindadde" target="_blank" rel="noopener" class="link">Matheus Trindade</a>, bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC). Trabalho como servidor público e desenvolvo projetos de ciência de dados e desenvolvimento web com foco em impacto social e aplicações práticas.`,
     education_title: "Formação",
     education_list: [
       "Tecnologia da Informação (UFMS) — em andamento",
@@ -138,7 +138,7 @@ const content = {
   en: {
     role_text: "Data Scientist · Full Stack Developer",
     about_title: "About",
-    about_text: `I'm Matheus Trindade, with a B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC). I work in public service and build data-driven and web applications focused on social impact and practical solutions.`,
+    about_text: `I'm <a href="https://www.linkedin.com/in/trindadde" target="_blank" rel="noopener" class="link">Matheus Trindade</a>, with a B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC). I work in public service and build data-driven and web applications focused on social impact and practical solutions.`,
     education_title: "Education",
     education_list: [
       "B.Tech in Information Technology (UFMS) — ongoing",
@@ -184,7 +184,7 @@ function render(lang = 'en') {
   const c = content[lang];
   applyDataI18n(lang);
 
-  document.getElementById('about_text').innerText = c.about_text;
+  document.getElementById('about_text').innerHTML = c.about_text;
   document.getElementById('role').innerText = c.role_text;
 
   const ed = document.getElementById('education_list');
@@ -228,3 +228,4 @@ render('en'); // A chamada inicial agora define 'EN' como padrão
 
 </body>
 </html>
+
