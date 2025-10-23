@@ -185,7 +185,7 @@ function applyDataI18n(lang) {
   });
 }
 
-function render(lang = 'pt') {
+function render(lang = 'en') {
   const c = content[lang];
   applyDataI18n(lang);
 
@@ -215,8 +215,9 @@ function render(lang = 'pt') {
 document.getElementById('lang-pt').addEventListener('click', () => render('pt'));
 document.getElementById('lang-en').addEventListener('click', () => render('en'));
 document.getElementById('year').innerText = new Date().getFullYear();
-render('pt');
+render('en');
 </script>
 
 </body>
 </html>
+
