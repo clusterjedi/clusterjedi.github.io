@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -14,7 +14,7 @@
       <img src="img1.png" alt="Foto profissional de Matheus Trindade" class="foto-perfil" />
       <div class="hero-text">
         <h1 id="name">Matheus Trindade</h1>
-        <p class="role" id="role" data-i18n="role_text">Cientista de Dados · Desenvolvedor Full Stack</p>
+        <p class="role" id="role">Cientista de Dados · Desenvolvedor Full Stack</p>
 
         <div class="actions">
           <a id="cv-pt" class="btn" href="PT-Curriculo_MT.pdf" download>Currículo (PT)</a>
@@ -23,209 +23,240 @@
 
         <div class="meta">
           <a href="mailto:trindadde@live.com" class="link">trindadde@live.com</a>
-          <span>•</span>
-          <a href="https://github.com/clusterjedi" target="_blank" rel="noopener" class="link">GitHub</a>
-          <span>•</span>
-          <a href="https://kaggle.com/clusterjedi" target="_blank" rel="noopener" class="link">Kaggle</a>
+          •
+          <a href="https://github.com/clusterjedi" class="link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          •
+          <a href="https://kaggle.com/clusterjedi" class="link" target="_blank" rel="noopener noreferrer">Kaggle</a>
         </div>
       </div>
     </div>
 
     <nav class="top-nav">
-      <button id="lang-pt" class="lang-btn active">PT</button>
-      <button id="lang-en" class="lang-btn">EN</button>
+      <button id="lang-pt" class="lang-btn" onclick="updateText('pt')">PT</button>
+      <button id="lang-en" class="lang-btn active" onclick="updateText('en')">EN</button>
     </nav>
   </header>
 
   <main class="container">
-
-    <section class="card" id="about">
-      <h2 data-i18n="about_title">Sobre</h2>
-      <p id="about_text"></p>
+    
+    <section class="card">
+      <h2 id="about_title">Sobre</h2>
+      <p id="about_text">
+        Sou <a href="formacao.html?lang=pt" target="_blank" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python) e infraestrutura (DevOps, Cloud).
+      </p>
     </section>
 
-    <section class="grid">
-      <div class="card" id="education">
-        <h3 data-i18n="education_title">Formação</h3>
-        <ul id="education_list"></ul>
-      </div>
+    <div class="grid">
+      <section class="card">
+        <h2 id="education_title">Formação</h2>
+        <ul class="list" id="education_list">
+            <li>Tecnologia da Informação (UFMS) — em andamento</li>
+            <li>Pós-graduação em Desenvolvimento Full Stack — PUC (2025)</li>
+            <li>MBA em Data Science & Analytics — USP (2024)</li>
+            <li>Bacharelado em Matemática — UNESP (2019)</li>
+            <li>Certificado Google Data Analytics — Google/Coursera (2025)</li>
+            <li>Técnico em Informática (ETEC, 2003)</li>
+        </ul>
+      </section>
 
-      <div class="card" id="skills">
-        <h3 data-i18n="skills_title">Competências</h3>
-        <ul id="skills_list" class="chips"></ul>
-      </div>
-    </section>
-
-    <section class="card" id="projects">
-      <h3 data-i18n="projects_title">Projetos selecionados</h3>
-      <p id="projects_text"></p>
+      <section class="card">
+          <h2 id="skills_title">Competências</h2>
+          <ul class="chips" id="skills_list">
+            <li>Python (Pandas, Scikit-learn)</li>
+            <li>R</li>
+            <li>SQL (PostgreSQL, MySQL)</li>
+            <li>NoSQL (MongoDB)</li>
+            <li>Machine Learning</li>
+            <li>Deep Learning (TensorFlow)</li>
+            <li>Big Data (Spark)</li>
+            <li>Power BI / Tableau</li>
+            <li>React / Next.js</li>
+            <li>Node.js</li>
+            <li>Django / Flask</li>
+            <li>APIs REST / GraphQL</li>
+            <li>Docker / Kubernetes</li>
+            <li>CI/CD</li>
+            <li>Flutter</li>
+          </ul>
+      </section>
+    </div>
+    
+    <section class="card">
+      <h2 id="projects_title">Projetos selecionados</h2>
+      <p id="projects_text">Meu portfólio prático está em constante desenvolvimento. Você pode encontrar implementações de modelos de ML, notebooks de análise exploratória e projetos de desenvolvimento web completos nos links abaixo.</p>
       <ul>
-        <li><a href="https://github.com/clusterjedi" target="_blank" rel="noopener">GitHub — projetos de Data Science e Full-Stack</a></li>
-        <li><a href="https://kaggle.com/clusterjedi" target="_blank" rel="noopener">Kaggle — kernels e notebooks</a></li>
+        <li><a href="https://github.com/clusterjedi" target="_blank" rel="noopener noreferrer">GitHub — projetos de Data Science e Full-Stack</a></li>
+        <li><a href="https://kaggle.com/clusterjedi" target="_blank" rel="noopener noreferrer">Kaggle — kernels e notebooks</a></li>
       </ul>
     </section>
 
-    <section class="card" id="goals">
-      <h3 data-i18n="goals_title">Metas Profissionais e Interesses</h3>
-      <ul id="goals_list"></ul>
+    <section class="card">
+      <h2 id="goals_title">Metas Profissionais e Interesses</h2>
+      <ol id="goals_list">
+        <li>Concluir a graduação em Tecnologia da Informação (UFMS).</li>
+        <li>Cursar a graduação em Ciências Econômicas.</li>
+        <li>Unir as competências de Desenvolvimento Full Stack, Ciência de Dados e Economia.</li>
+        <li>Aplicar este conhecimento integrado no desenvolvimento de projetos de alto impacto social.</li>
+        <li>Atuar em projetos freelance ou remotos de nível global.</li>
+      </ol>
     </section>
 
-    <section class="card" id="contact">
-      <h3 data-i18n="contact_title">Contato</h3>
-      <p id="contact_text"></p>
+    <section class="card">
+      <h2 id="contact_title">Contato</h2>
       <ul>
-        <li><strong>Email:</strong> <a href="mailto:trindadde@live.com">trindadde@live.com</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/trindadde" target="_blank" rel="noopener">linkedin.com/in/trindadde</a></li>
-        <li><strong>Lattes / ORCID / Academia / Medium:</strong> links no rodapé</li>
+        <li><strong>Email:</strong> <a href="mailto:trindadde@live.com" class="link">trindadde@live.com</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/trindadde" target="_blank" rel="noopener noreferrer" class="link">linkedin.com/in/trindadde</a></li>
+        <li id="contact_academic_links"><strong>Links acadêmicos:</strong> (rodapé)</li>
       </ul>
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <small id="copyright">© <span id="year"></span> Matheus Trindade</small>
-      </div>
-      <div class="footer-right">
-        <a href="http://lattes.cnpq.br/4881948734940849" target="_blank" rel="noopener">Lattes</a>
-        <span>·</span>
-        <a href="https://orcid.org/0009-0002-9301-0656" target="_blank" rel="noopener">ORCID</a>
-        <span>·</span>
-        <a href="https://unesp.academia.edu/MatheusTrindade" target="_blank" rel="noopener">Academia.edu</a>
-        <span>·</span>
-        <a href="https://medium.com/@trindadde" target="_blank" rel="noopener">Medium</a>
-      </div>
-    </div>
+  <footer class="site-footer container">
+    <span>© 2025 Matheus Trindade</span>
+    <nav>
+      <a href="http://lattes.cnpq.br/4881948734940849" class="link" target="_blank" rel="noopener noreferrer">Lattes</a>
+      ·
+      <a href="https://orcid.org/0009-0002-9301-0656" class="link" target="_blank" rel="noopener noreferrer">ORCID</a>
+      ·
+      <a href="https://unesp.academia.edu/MatheusTrindade" class="link" target="_blank" rel="noopener noreferrer">Academia.edu</a>
+      ·
+      <a href="https://medium.com/@trindadde" class="link" target="_blank" rel="noopener noreferrer">Medium</a>
+    </nav>
   </footer>
 
-<script>
-const content = {
-  pt: {
-    role_text: "Cientista de Dados · Desenvolvedor Full Stack",
-    about_title: "Sobre Mim",
-    about_text: `Sou <a href="https://www.linkedin.com/in/trindadde" target="_blank" rel="noopener" class="link">Matheus Trindade</a>, bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC). Trabalho como servidor público e desenvolvo projetos de ciência de dados e desenvolvimento web com foco em impacto social e aplicações práticas.`,
-    education_title: "Formação",
-    education_list: [
-      "Tecnologia da Informação (UFMS) — em andamento",
-      "Pós-graduação em Desenvolvimento Full Stack — PUC (2025)",
-      "MBA em Data Science & Analytics — USP (2024)",
-      "Bacharelado em Matemática — UNESP (2019)",
-      "Técnico em Informática (ETEC, 2003)"
-    ],
-    skills_title: "Competências",
-    skills_list: [
-      "Python (Pandas, Scikit-Learn, TensorFlow)",
-      "R",
-      "SQL, Spark",
-      "React, Node.js, Django",
-      "Power BI, Tableau",
-      "Modelagem estatística, Machine Learning",
-      "DevOps: Docker, GitHub Actions"
-    ],
-    projects_title: "Projetos selecionados",
-    projects_text: "No GitHub e Kaggle você encontra projetos de clusterização, análise exploratória, modelos preditivos e aplicações web full-stack.",
-    goals_title: "Metas Profissionais e Interesses",
-    goals_list: [
-      "Concluir a graduação em Tecnologia da Informação.",
-      "Cursar a graduação em Ciências Econômicas.",
-      "Unir as competências de Desenvolvimento Full Stack, Ciência de Dados e Economia.",
-      "Aplicar este conhecimento integrado no desenvolvimento de projetos de alto impacto social ou em pesquisas acadêmicas."
-    ],
-    contact_title: "Contato",
-    contact_text: "Procuro trabalhos como freelancer remoto e projetos que integrem dados e desenvolvimento. Envie um email ou veja meu GitHub/Kaggle para portfólio."
-  },
-  en: {
-    role_text: "Data Scientist · Full Stack Developer",
-    about_title: "About",
-    about_text: `I'm <a href="https://www.linkedin.com/in/trindadde" target="_blank" rel="noopener" class="link">Matheus Trindade</a>, with a B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC). I work in public service and build data-driven and web applications focused on social impact and practical solutions.`,
-    education_title: "Education",
-    education_list: [
-      "B.Tech in Information Technology (UFMS) — ongoing",
-      "Specialization in Full Stack Development — PUC (2025)",
-      "MBA in Data Science & Analytics — USP (2024)",
-      "B.Sc. in Mathematics — UNESP (2019)",
-      "Technical Degree in Informatics (ETEC, 2003)"
-    ],
-    skills_title: "Skills",
-    skills_list: [
-      "Python (Pandas, Scikit-Learn, TensorFlow)",
-      "R",
-      "SQL, Spark",
-      "React, Node.js, Django",
-      "Power BI, Tableau",
-      "Statistical modeling, Machine Learning",
-      "DevOps: Docker, GitHub Actions"
-    ],
-    projects_title: "Selected Projects",
-    projects_text: "On GitHub and Kaggle you'll find clustering projects, exploratory analysis, predictive models and full-stack apps.",
-    goals_title: "Professional Goals and Interests",
-    goals_list: [
-      "Complete the Bachelor's degree in Information Technology.",
-      "Pursue a Bachelor's degree in Economics.",
-      "Combine Full Stack Development, Data Science, and Economics skills.",
-      "Apply this integrated knowledge to high-impact social projects or academic research."
-    ],
-    contact_title: "Contact",
-    contact_text: "Available for remote freelance work and collaborations that combine data and software. Send an email or check my GitHub / Kaggle for the portfolio."
-  }
-};
 
-function applyDataI18n(lang) {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (content[lang] && content[lang][key]) {
-      el.textContent = content[lang][key];
+  <script>
+    // Objeto de conteúdo bilíngue
+    const content = {
+      pt: {
+        role: "Cientista de Dados · Desenvolvedor Full Stack",
+        about_title: "Sobre",
+        about_text: 'Sou <a href="formacao.html?lang=pt" target="_blank" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python) e infraestrutura (DevOps, Cloud).',
+        education_title: "Formação",
+        // ATUALIZAÇÃO SCRIPT PT AQUI
+        education_list: [
+            "Tecnologia da Informação (UFMS) — em andamento",
+            "Pós-graduação em Desenvolvimento Full Stack — PUC (2025)",
+            "MBA em Data Science & Analytics — USP (2024)",
+            "Bacharelado em Matemática — UNESP (2019)",
+            "Certificado Google Data Analytics — Google/Coursera (2025)",
+            "Técnico em Informática (ETEC, 2003)"
+        ],
+        skills_title: "Competências",
+        skills_list: [
+          'Python (Pandas, Scikit-learn)', 'R', 'SQL (PostgreSQL, MySQL)', 'NoSQL (MongoDB)', 'Machine Learning', 'Deep Learning (TensorFlow)',
+          'Big Data (Spark)', 'Power BI / Tableau', 'React / Next.js', 'Node.js', 'Django / Flask', 'APIs REST / GraphQL',
+          'Docker / Kubernetes', 'CI/CD', 'Flutter'
+        ],
+        goals_title: "Metas Profissionais e Interesses",
+        goals_list: [
+          'Concluir a graduação em Tecnologia da Informação (UFMS).',
+          'Cursar a graduação em Ciências Econômicas.',
+          'Unir as competências de Desenvolvimento Full Stack, Ciência de Dados e Economia.',
+          'Aplicar este conhecimento integrado no desenvolvimento de projetos de alto impacto social.',
+          'Atuar em projetos freelance ou remotos de nível global.'
+        ],
+        projects_title: "Projetos selecionados",
+        projects_text: "Meu portfólio prático está em constante desenvolvimento. Você pode encontrar implementações de modelos de ML, notebooks de análise exploratória e projetos de desenvolvimento web completos nos links abaixo.",
+        contact_title: "Contato",
+        contact_academic_links: "<strong>Links acadêmicos:</strong> (rodapé)"
+      },
+      en: {
+        role: "Data Scientist · Full Stack Developer",
+        about_title: "About",
+        about_text: 'I hold a <a href="formacao.html?lang=en" target="_blank" class="inline-link">B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC)</a>. My background combines analytical rigor with the development of end-to-end tech solutions, from data modeling (Machine Learning, Statistics) to creating web/mobile apps (React, Node, Python) and infrastructure (DevOps, Cloud).',
+        education_title: "Education",
+        // ATUALIZAÇÃO SCRIPT EN AQUI
+        education_list: [
+            "B.Tech in Information Technology (UFMS) — in progress",
+            "Postgrad in Full Stack Development — PUC (2025)",
+            "MBA in Data Science & Analytics — USP (2024)",
+            "B.Sc. in Mathematics — UNESP (2019)",
+            "Google Data Analytics Certificate — Google/Coursera (2025)",
+            "Technical Degree in Informatics (ETEC, 2003)"
+        ],
+        skills_title: "Skills",
+        skills_list: [
+          'Python (Pandas, Scikit-learn)', 'R', 'SQL (PostgreSQL, MySQL)', 'NoSQL (MongoDB)', 'Machine Learning', 'Deep Learning (TensorFlow)',
+          'Big Data (Spark)', 'Power BI / Tableau', 'React / Next.js', 'Node.js', 'Django / Flask', 'REST / GraphQL APIs',
+          'Docker / Kubernetes', 'CI/CD', 'Flutter'
+        ],
+        goals_title: "Professional Goals and Interests",
+        goals_list: [
+          'Complete the B.Tech in Information Technology (UFMS).',
+          'Pursue a B.Sc. in Economics.',
+          'Combine Full Stack Development, Data Science, and Economics competencies.',
+          'Apply this integrated knowledge to develop high social impact projects.',
+          'Engage in global-level freelance or remote projects.'
+        ],
+        projects_title: "Selected Projects",
+        projects_text: "My practical portfolio is constantly evolving. You can find ML model implementations, exploratory analysis notebooks, and complete web development projects in the links below.",
+        contact_title: "Contact",
+        contact_academic_links: "<strong>Academic links:</strong> (footer)"
+      }
+    };
+
+    // Função para atualizar o texto
+    function updateText(lang) {
+      const c = content[lang];
+      
+      const elementsToUpdate = {
+        'role': c.role,
+        'about_title': c.about_title,
+        'about_text': c.about_text, // innerHTML
+        'education_title': c.education_title,
+        'skills_title': c.skills_title,
+        'goals_title': c.goals_title,
+        'projects_title': c.projects_title,
+        'projects_text': c.projects_text, 
+        'contact_title': c.contact_title,
+        'contact_academic_links': c.contact_academic_links // innerHTML
+      };
+
+      for (const [k, v] of Object.entries(elementsToUpdate)) {
+        const el = document.getElementById(k);
+        if (el) {
+          // Usa innerHTML para textos que contêm HTML (link, strong)
+          if (k === 'about_text' || k === 'contact_academic_links') {
+            el.innerHTML = v;
+          } else {
+            el.innerText = v;
+          }
+        }
+      }
+
+      // Atualiza lista de Educação
+      const education = document.getElementById('education_list');
+      education.innerHTML = '';
+      c.education_list.forEach(i => education.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+
+      // Atualiza lista de Competências
+      const skills = document.getElementById('skills_list');
+      skills.innerHTML = '';
+      c.skills_list.forEach(i => skills.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+
+      // Atualiza lista de Metas
+      const goals = document.getElementById('goals_list');
+      goals.innerHTML = '';
+      c.goals_list.forEach(i => goals.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+
+      // Atualiza botões
+      document.getElementById('lang-pt').classList.toggle('active', lang === 'pt');
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+      document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
+
+      const cvPtBtn = document.getElementById('cv-pt');
+      const cvEnBtn = document.getElementById('cv-en');
+      cvPtBtn.classList.toggle('btn-outline', lang !== 'pt');
+      cvEnBtn.classList.toggle('btn-outline', lang !== 'en');
     }
-  });
-}
 
-function render(lang = 'en') {
-  const c = content[lang];
-  applyDataI18n(lang);
-
-  document.getElementById('about_text').innerHTML = c.about_text;
-  document.getElementById('role').innerText = c.role_text;
-
-  const ed = document.getElementById('education_list');
-  ed.innerHTML = '';
-  c.education_list.forEach(i => ed.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
-
-  const sk = document.getElementById('skills_list');
-  sk.innerHTML = '';
-  c.skills_list.forEach(i => sk.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
-
-  const goals = document.getElementById('goals_list');
-  goals.innerHTML = '';
-  c.goals_list.forEach(i => goals.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
-
-  document.getElementById('projects_text').innerText = c.projects_text;
-  document.getElementById('contact_text').innerText  = c.contact_text;
-
-  document.getElementById('lang-pt').classList.toggle('active', lang === 'pt');
-  document.getElementById('lang-en').classList.toggle('active', lang === 'en');
-  document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
-
-  // --- INÍCIO DA ALTERAÇÃO SOLICITADA ---
-  // Atualiza os estilos dos botões de currículo com base no idioma
-  const cvPtBtn = document.getElementById('cv-pt');
-  const cvEnBtn = document.getElementById('cv-en');
-  
-  // A classe 'btn' é o estilo ativo (sólido)
-  // A classe 'btn-outline' é o estilo inativo (contorno)
-  
-  // Se lang for 'pt', 'btn-outline' é false para cvPtBtn e true para cvEnBtn
-  cvPtBtn.classList.toggle('btn-outline', lang !== 'pt');
-  cvEnBtn.classList.toggle('btn-outline', lang !== 'en');
-  // --- FIM DA ALTERAÇÃO SOLICITADA ---
-}
-
-document.getElementById('lang-pt').addEventListener('click', () => render('pt'));
-document.getElementById('lang-en').addEventListener('click', () => render('en'));
-document.getElementById('year').innerText = new Date().getFullYear();
-render('en'); // A chamada inicial agora define 'EN' como padrão
-</script>
+    // Inicializa o texto com o idioma inglês
+    document.addEventListener('DOMContentLoaded', () => {
+      updateText('en'); 
+    });
+  </script>
 
 </body>
 </html>
-
