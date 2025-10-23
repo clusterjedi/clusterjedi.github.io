@@ -1,4 +1,4 @@
-# 🌐 Matheus Trindade — Data Scientist & Full Stack Developer
+# 🌐 Data Scientist & Full Stack Developer
 
 **Website:** [https://clusterjedi.github.io](https://clusterjedi.github.io)  
 **LinkedIn:** [https://www.linkedin.com/in/trindadde](https://www.linkedin.com/in/trindadde)
