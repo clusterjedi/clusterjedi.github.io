@@ -1,0 +1,64 @@
+/* --- base e container (mantive alguns valores do seu estilos.css) --- */
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #556;
+  --accent: #2c98d9;
+  --accent-2: #2980b9;
+  --radius: 10px;
+  --maxw: 1100px;
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#223;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+.container{max-width:var(--maxw);margin:24px auto;padding:20px}
+
+/* header */
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:10px 20px}
+.hero{display:flex;gap:18px;align-items:center}
+.foto-perfil{width:120px;height:120px;border-radius:999px;object-fit:cover;border:3px solid var(--accent)}
+.hero-text h1{margin:0;font-size:1.6rem}
+.role{margin:6px 0;color:var(--muted)}
+
+/* actions */
+.actions{margin-top:8px;display:flex;gap:10px}
+.btn{display:inline-block;padding:8px 12px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:600}
+.btn-outline{background:#fff;border:1px solid var(--accent);color:var(--accent)}
+
+/* nav (lang) */
+.top-nav{display:flex;gap:6px}
+.lang-btn{background:transparent;border:1px solid #dbe6f0;padding:6px 8px;border-radius:6px;cursor:pointer}
+.lang-btn.active{background:var(--accent-2);color:white;border-color:var(--accent-2)}
+
+/* main / cards */
+main{margin-top:18px}
+.card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(20,30,40,0.04);margin-bottom:16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+
+/* chips skills */
+.chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.chips li{background:#eef7ff;padding:6px 10px;border-radius:999px;border:1px solid #d6ecff;font-size:0.9rem}
+
+/* footer */
+.site-footer{margin-top:10px;padding:16px 0;background:transparent}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;font-size:0.9rem;color:var(--muted)}
+
+/* responsive */
+@media (max-width:800px){
+  .grid{grid-template-columns:1fr}
+  .hero{flex-direction:column;align-items:center;text-align:center}
+  .meta{display:block}
+  .hero-text{max-width:70%}
+}
+
+/* small helpers */
+a.link{color:var(--accent-2);text-decoration:none}
+a.link:hover{text-decoration:underline}
