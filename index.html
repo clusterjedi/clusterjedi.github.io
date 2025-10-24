@@ -76,7 +76,7 @@
       <section class="card">
         <h2 id="contact_title">Contato</h2>
         
-        <form id="contact-form" action="https://formspree.io/f/xqayrjnp" method="POST" class="contact-form">
+        <form id="contact-form" class="contact-form">
           <div class="form-group">
             <label for="name-input" id="label-name">Nome</label>
             <input type="text" id="name-input" name="name" required placeholder="Seu Nome">
@@ -91,6 +91,8 @@
           </div>
           <button type="submit" id="submit-btn" class="btn">Enviar</button>
         </form>
+
+        <div id="form-status" class="form-status"></div>
         
       </section>
 
@@ -171,15 +173,15 @@
 
 
   <script>
-    // Objeto de conteúdo bilíngue
+    // Objeto de conteúdo bilíngue (mantido igual)
     const content = {
       pt: {
         role: "Cientista de Dados · Desenvolvedor Full Stack",
         portfolio_btn: "Ver Portfólio", 
         cv_online_btn_pt: "CV Online (PT)",
-        pdf_download_link_pt: "(PDF)", // <-- Texto PT atualizado
+        pdf_download_link_pt: "(PDF)", 
         cv_online_btn_en: "CV Online (EN)", 
-        pdf_download_link_en: "(PDF)", // <-- Texto EN atualizado
+        pdf_download_link_en: "(PDF)", 
         about_title: "Sobre",
         about_text: 'Sou <a href="formacao.html?lang=pt" target="_blank" rel="noopener noreferrer" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python), com foco em impacto social e aplicações práticas.',
         education_title: "Formação",
@@ -224,15 +226,17 @@
         placeholder_name: "Seu Nome",
         placeholder_email: "seu@email.com",
         placeholder_message: "Sua Mensagem...",
-        submit_btn: "Enviar"
+        submit_btn: "Enviar",
+        form_success_msg: "Obrigado! Sua mensagem foi enviada.", // <-- Nova mensagem
+        form_error_msg: "Oops! Houve um problema ao enviar sua mensagem." // <-- Nova mensagem
       },
       en: {
         role: "Data Scientist · Full Stack Developer",
         portfolio_btn: "View Portfolio", 
         cv_online_btn_pt: "Online CV (PT)", 
-        pdf_download_link_pt: "(PDF)", // <-- Texto PT atualizado
+        pdf_download_link_pt: "(PDF)", 
         cv_online_btn_en: "Online CV (EN)",
-        pdf_download_link_en: "(PDF)", // <-- Texto EN atualizado
+        pdf_download_link_en: "(PDF)", 
         about_title: "About",
         about_text: 'I hold a <a href="formacao.html?lang=en" target="_blank" rel="noopener noreferrer" class="inline-link">B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC)</a>. My background combines analytical rigor with the development of end-to-end tech solutions, from data modeling (Machine Learning, Statistics) to creating web/mobile apps (React, Node, Python), focused on social impact and practical solutions.',
         education_title: "Education",
@@ -277,40 +281,31 @@
         placeholder_name: "Your Name",
         placeholder_email: "your@email.com",
         placeholder_message: "Your Message...",
-        submit_btn: "Send"
+        submit_btn: "Send",
+        form_success_msg: "Thanks! Your message has been sent.", // <-- Nova mensagem
+        form_error_msg: "Oops! There was a problem submitting your form." // <-- Nova mensagem
       }
     };
 
-    // Função para atualizar o texto
+    // Função para atualizar o texto (mantida igual)
     function updateText(lang) {
       const c = content[lang];
       
-      // Mapeamento ID -> Chave de conteúdo
+      // Mapeamento ID -> Chave de conteúdo (mantido igual)
       const elementsToUpdate = {
-        'role': 'role',
-        'portfolio-btn': 'portfolio_btn', 
-        'cv-pt': 'cv_online_btn_pt', 
-        'pdf-pt-link': 'pdf_download_link_pt', // Texto atualizado
-        'cv-en': 'cv_online_btn_en', 
-        'pdf-en-link': 'pdf_download_link_en', // Texto atualizado
-        'about_title': 'about_title',
-        'about_text': 'about_text', // innerHTML
-        'education_title': 'education_title',
-        'education-linkedin-label': 'education_linkedin_label', 
+        'role': 'role', 'portfolio-btn': 'portfolio_btn', 
+        'cv-pt': 'cv_online_btn_pt', 'pdf-pt-link': 'pdf_download_link_pt', 
+        'cv-en': 'cv_online_btn_en', 'pdf-en-link': 'pdf_download_link_en', 
+        'about_title': 'about_title', 'about_text': 'about_text', 
+        'education_title': 'education_title', 'education-linkedin-label': 'education_linkedin_label', 
         'education-academic-links-label': 'education_academic_links_label', 
         'education-academic-links-text': 'education_academic_links_text', 
-        'skills_title': 'skills_title',
-        'goals_title': 'goals_title',
-        'projects_title': 'projects_title',
-        'projects_text': 'projects_text', 
-        'contact_title': 'contact_title',
-        'label-name': 'label_name', 
-        'label-email': 'label_email', 
-        'label-message': 'label_message', 
-        'name-input': 'placeholder_name', 
-        'email-input': 'placeholder_email', 
-        'message-input': 'placeholder_message', 
-        'submit-btn': 'submit_btn' 
+        'skills_title': 'skills_title', 'goals_title': 'goals_title',
+        'projects_title': 'projects_title', 'projects_text': 'projects_text', 
+        'contact_title': 'contact_title', 'label-name': 'label_name', 
+        'label-email': 'label_email', 'label-message': 'label_message', 
+        'name-input': 'placeholder_name', 'email-input': 'placeholder_email', 
+        'message-input': 'placeholder_message', 'submit-btn': 'submit_btn' 
       };
 
       for (const [id, key] of Object.entries(elementsToUpdate)) {
@@ -333,28 +328,22 @@
         }
       }
 
-      // Atualiza lista de Educação
+      // Atualiza listas (mantido igual)
       const education = document.getElementById('education_list');
       if (education) {
         education.innerHTML = '';
         c.education_list.forEach(i => education.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
       }
-
-      // Atualiza lista de Competências
       const skills = document.getElementById('skills_list');
        if (skills) {
         skills.innerHTML = '';
         c.skills_list.forEach(i => skills.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
        }
-
-      // Atualiza lista de Metas
       const goals = document.getElementById('goals_list');
        if (goals) {
         goals.innerHTML = '';
         c.goals_list.forEach(i => goals.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
        }
-
-      // Atualiza lista de Projetos
       const projectsList = document.getElementById('projects_list');
       if (projectsList) {
         const projectLinks = projectsList.getElementsByTagName('a'); 
@@ -370,27 +359,82 @@
         }
       }
 
-      // Atualiza botões de idioma
+      // Atualiza botões (mantido igual)
       document.getElementById('lang-pt').classList.toggle('active', lang === 'pt');
       document.getElementById('lang-en').classList.toggle('active', lang === 'en');
       document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
 
-      // Atualiza botões/links de CV (estilo outline)
       const cvPtBtn = document.getElementById('cv-pt');
       const cvEnBtn = document.getElementById('cv-en');
       if(cvPtBtn) cvPtBtn.classList.toggle('btn-outline', lang !== 'pt');
       if(cvEnBtn) cvEnBtn.classList.toggle('btn-outline', lang !== 'en');
       
-      // *** Mostra/Esconde links PDF baseado no idioma ***
       const pdfPtLink = document.getElementById('pdf-pt-link');
       const pdfEnLink = document.getElementById('pdf-en-link');
       if(pdfPtLink) pdfPtLink.style.display = (lang === 'pt') ? 'inline' : 'none';
       if(pdfEnLink) pdfEnLink.style.display = (lang === 'en') ? 'inline' : 'none';
     }
 
-    // Inicializa o texto com o idioma inglês
+    // Inicializa o texto com o idioma inglês (mantido igual)
     document.addEventListener('DOMContentLoaded', () => {
       updateText('en'); 
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contact-form');
+      const statusDiv = document.getElementById('form-status');
+      const submitButton = document.getElementById('submit-btn');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão
+        
+        const formData = new FormData(form);
+        const currentLang = document.documentElement.lang.startsWith('pt') ? 'pt' : 'en'; // Pega o idioma atual
+        const successMsg = content[currentLang].form_success_msg;
+        const errorMsg = content[currentLang].form_error_msg;
+
+        // Desabilita o botão e mostra um status de envio
+        submitButton.disabled = true;
+        statusDiv.innerText = (currentLang === 'pt' ? 'Enviando...' : 'Sending...');
+        statusDiv.className = 'form-status sending'; // Classe para estilo (opcional)
+
+        fetch("https://formspree.io/f/xqayrjnp", { // Seu endpoint Formspree
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            // Sucesso
+            statusDiv.innerText = successMsg;
+            statusDiv.className = 'form-status success';
+            form.reset(); // Limpa o formulário
+          } else {
+            // Tenta obter mais detalhes do erro, se possível
+            response.json().then(data => {
+              if (Object.hasOwn(data, 'errors')) {
+                 statusDiv.innerText = errorMsg + " " + data["errors"].map(error => error["message"]).join(", ");
+              } else {
+                 statusDiv.innerText = errorMsg;
+              }
+               statusDiv.className = 'form-status error';
+            })
+          }
+        }).catch(error => {
+          // Erro de rede ou outro problema
+          statusDiv.innerText = errorMsg;
+          statusDiv.className = 'form-status error';
+        }).finally(() => {
+           // Reabilita o botão após o envio (com ou sem erro)
+           // Adiciona um pequeno delay para o usuário ver a mensagem antes do botão reativar
+           setTimeout(() => {
+             submitButton.disabled = false; 
+           }, 1000); 
+        });
+      });
     });
   </script>
 
