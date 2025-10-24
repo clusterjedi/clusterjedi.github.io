@@ -1,189 +1,30 @@
-/* --- base e container (mantive alguns valores do seu estilos.css) --- */
-:root{
-  --bg: #f6f8fb;
-  --card: #ffffff;
-  --muted: #556;
-  --accent: #2c98d9;
-  --accent-2: #2980b9;
-  --radius: 10px;
-  --maxw: 1100px;
-  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-}
-
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--bg);
-  color:#223;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
-}
-.container{max-width:var(--maxw);margin:24px auto;padding:20px}
-
-/* header */
-.site-header{display:flex;align-items:center;justify-content:space-between;padding:10px 20px}
-.hero{display:flex;gap:18px;align-items:center}
-.foto-perfil{width:120px;height:120px;border-radius:999px;object-fit:cover;border:3px solid var(--accent)}
-.hero-text h1{margin:0;font-size:1.6rem}
-.role{margin:6px 0;color:var(--muted)}
-
-/* actions */
-.actions{margin-top:8px;display:flex;flex-wrap:wrap;gap:10px} /* Adicionado flex-wrap */
-.btn{display:inline-block;padding:8px 12px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:600}
-.btn-outline{background:#fff;border:1px solid var(--accent);color:var(--accent)}
-
-/* --- NOVO: Estilos para links PDF --- */
-.pdf-links {
-  margin-top: 6px; /* Espaço acima dos links PDF */
-  margin-bottom: 8px; /* Espaço abaixo dos links PDF, antes do .meta */
-  display: flex;
-  gap: 10px; /* Espaço entre os links PT e EN */
-  align-items: center;
-}
-.pdf-links a {
-  font-size: 0.85em; /* Fonte menor */
-  color: var(--muted); /* Cor cinza */
-}
-
-/* meta links (email, github, etc) */
-.meta{margin-top:10px;font-size:0.9rem}
-
-/* nav (lang) */
-.top-nav{display:flex;gap:6px}
-.lang-btn{background:transparent;border:1px solid #dbe6f0;padding:6px 8px;border-radius:6px;cursor:pointer}
-.lang-btn.active{background:var(--accent-2);color:white;border-color:var(--accent-2)}
-
-/* main / cards */
-main{margin-top:18px}
-.card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(20,30,40,0.04);margin-bottom:16px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-
-/* chips skills */
-.chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin:0}
-.chips li{background:#eef7ff;padding:6px 10px;border-radius:999px;font-size:0.9rem;font-weight:500;color:var(--accent-2)}
-
-/* lists (educação e metas) */
-.list{list-style:none;padding:0;margin:0}
-.list li{margin-bottom:6px;position:relative;padding-left:16px}
-.list li::before{content:'•';position:absolute;left:0;color:var(--accent)}
-
-/* footer */
-.site-footer{margin-top:10px;padding:16px 0;background:transparent}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;font-size:0.9rem;color:var(--muted)}
-
-/* responsive */
-@media (max-width:800px){
-  .grid{grid-template-columns:1fr}
-  .hero{flex-direction:column;align-items:center;text-align:center}
-  .meta{display:block}
-  .hero-text{max-width:70%}
-  /* --- NOVO: Ajusta PDF links em telas menores --- */
-  .pdf-links { justify-content: center; } /* Centraliza os links PDF */
-}
-
-/* small helpers */
-a.link{color:var(--accent-2);text-decoration:none}
-a.link:hover{text-decoration:underline}
-
-/* --- link inline (adicionado) --- */
-.inline-link {
-  color: var(--accent-2);
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 2px solid rgba(41, 128, 185, 0.2);
-  transition: all 0.2s ease;
-}
-.inline-link:hover {
-  text-decoration: none;
-  background-color: rgba(41, 128, 185, 0.08);
-}
-
-/* --- Rodapé (Footer) --- */
-.site-footer {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
-  align-items: center;
-  gap: 10px; 
-  
-  margin-top: 24px;
-  padding-top: 18px;
-  border-top: 1px solid #e0e6ec; 
-  color: var(--muted, #556);
-  font-size: 0.9rem;
-}
-
-.site-footer nav {
-  display: flex;
-  align-items: center;
-  gap: 6px; 
-}
-
-.site-footer nav a {
-  color: var(--muted, #556);
-}
-
-/* --- Estilos para o Formulário de Contato --- */
-.contact-form {
-  margin-top: 15px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 600;
-  font-size: 0.9em;
-  color: var(--muted);
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  width: 100%;
+/* --- Estilos para o Status do Formulário de Contato --- */
+.form-status {
+  margin-top: 15px; /* Espaço acima da mensagem */
   padding: 10px;
-  border: 1px solid #dbe6f0; 
   border-radius: 6px;
-  font-size: 1em;
-  font-family: inherit; 
-  background-color: #fcfdfe; 
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.9em;
+  font-weight: 500;
+  display: none; /* Começa escondido */
 }
 
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--accent); 
-  box-shadow: 0 0 0 2px rgba(44, 152, 217, 0.2); 
+.form-status.sending {
+  display: block; /* Mostra quando enviando */
+  background-color: #eef7ff; /* Fundo azul claro */
+  color: var(--accent-2); /* Texto azul */
+  border: 1px solid #cce5ff; 
 }
 
-.contact-form textarea {
-  resize: vertical; 
-  min-height: 80px;
+.form-status.success {
+  display: block; /* Mostra quando sucesso */
+  background-color: #e6ffed; /* Fundo verde claro */
+  color: #1a7431; /* Texto verde escuro */
+  border: 1px solid #c3e6cb;
 }
 
-.contact-form button[type="submit"] {
-  cursor: pointer;
-}
-
-/* --- Estilos para links adicionais na seção Educação --- */
-.section-divider {
-  border: none; 
-  height: 1px; 
-  background-color: #e0e6ec; 
-  margin: 20px 0 15px 0; 
-}
-
-.additional-links {
-  font-size: 0.9em; 
-  color: var(--muted); 
-}
-
-.additional-links p {
-  margin-bottom: 5px; 
+.form-status.error {
+  display: block; /* Mostra quando erro */
+  background-color: #f8d7da; /* Fundo vermelho claro */
+  color: #721c24; /* Texto vermelho escuro */
+  border: 1px solid #f5c6cb;
 }
