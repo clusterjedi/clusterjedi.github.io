@@ -6,7 +6,22 @@
   <title>Matheus Trindade — Data Scientist & Full-Stack</title>
   <link rel="stylesheet" href="estilos.css">
   <meta name="description" content="Matheus Trindade — Data Scientist & Full-Stack Developer. Portfolio, CV, and projects in Data Science, Machine Learning (ML), and web applications.">
-</head>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Matheus Trindade",
+    "jobTitle": "Data Scientist & Full-Stack Developer",
+    "url": "https://clusterjedi.github.io/",
+    "sameAs": [
+      "https://github.com/clusterjedi",
+      "https://www.linkedin.com/in/trindadde",
+      "https://kaggle.com/clusterjedi" 
+    ]
+  }
+  </script>
+  </head>
 <body>
 
   <header class="site-header container">
@@ -116,7 +131,7 @@
         <h2 id="projects_title">Projetos selecionados</h2>
         <p id="projects_text">Meu portfólio prático está em constante desenvolvimento. Você pode encontrar implementações de modelos de ML, notebooks de análise exploratória e projetos de desenvolvimento web completos nos links abaixo.</p>
         <ul id="projects_list">
-          <li><a href="projeto-bellabeat.html?lang=pt" id="project-bellabeat-link-pt">Estudo de Caso: Análise de Dados Bellabeat (Google Capstone)</a></li>
+          <li><a href="projeto-bellabeat.html?lang=en" id="project-bellabeat-link-en">Estudo de Caso: Análise de Dados Bellabeat (Google Capstone)</a></li>
           <li><a href="https://github.com/clusterjedi" target="_blank" rel="noopener noreferrer">GitHub — mais projetos de Data Science e Full-Stack</a></li>
           <li><a href="https://kaggle.com/clusterjedi" target="_blank" rel="noopener noreferrer">Kaggle — kernels e notebooks</a></li>
         </ul>
@@ -188,7 +203,6 @@
         ],
         projects_title: "Projetos selecionados",
         projects_text: "Meu portfólio prático está em constante desenvolvimento. Você pode encontrar implementações de modelos de ML, notebooks de análise exploratória e projetos de desenvolvimento web completos nos links abaixo.",
-        // *** TRADUÇÃO PT ADICIONADA PARA O LINK DO PROJETO ***
         projects_list_items: [
           'Estudo de Caso: Análise de Dados Bellabeat (Google Capstone)',
           'GitHub — mais projetos de Data Science e Full-Stack',
@@ -238,7 +252,6 @@
         ],
         projects_title: "Selected Projects",
         projects_text: "My practical portfolio is constantly evolving. You can find ML model implementations, exploratory analysis notebooks, and complete web development projects in the links below.",
-         // *** TRADUÇÃO EN ADICIONADA PARA O LINK DO PROJETO ***
         projects_list_items: [
           'Case Study: Bellabeat Data Analysis (Google Capstone)',
           'GitHub — more Data Science & Full-Stack projects',
@@ -316,20 +329,20 @@
       goals.innerHTML = '';
       c.goals_list.forEach(i => goals.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
 
-      // *** ATUALIZA LISTA DE PROJETOS ***
+      // Atualiza lista de Projetos
       const projectsList = document.getElementById('projects_list');
-      const projectLinks = projectsList.getElementsByTagName('a'); // Pega todos os links dentro da lista
+      const projectLinks = projectsList.getElementsByTagName('a'); 
       if (projectLinks.length === c.projects_list_items.length) {
         for (let i = 0; i < projectLinks.length; i++) {
-          projectLinks[i].innerText = c.projects_list_items[i]; // Atualiza o texto de cada link
-          // Atualiza o href do link do Bellabeat para incluir o idioma correto
-          if (projectLinks[i].id === 'project-bellabeat-link-pt' || projectLinks[i].id === 'project-bellabeat-link-en') { // Usando os IDs adicionados
+          projectLinks[i].innerText = c.projects_list_items[i]; 
+          // Atualiza o href do link do Bellabeat
+          const bellabeatLinkId = `project-bellabeat-link-${lang}`;
+          if (projectLinks[i].id === 'project-bellabeat-link-pt' || projectLinks[i].id === 'project-bellabeat-link-en') { 
              projectLinks[i].href = `projeto-bellabeat.html?lang=${lang}`;
-             projectLinks[i].id = `project-bellabeat-link-${lang}`; // Atualiza o ID se necessário
+             projectLinks[i].id = bellabeatLinkId; 
           }
         }
       }
-
 
       // Atualiza botões de idioma
       document.getElementById('lang-pt').classList.toggle('active', lang === 'pt');
