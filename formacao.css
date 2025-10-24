@@ -168,6 +168,39 @@
   font-weight: bold;
 }
 
+/* --- Estilo para o layout do Card Google (Badge + Tópicos) --- */
+.google-cert-layout {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar em telas pequenas */
+  gap: 20px 24px; /* 20px vertical, 24px horizontal */
+  align-items: flex-start; /* Alinha no topo */
+}
+
+/* O <p> dentro do layout do Google não precisa da borda inferior */
+.card-formacao[open] .google-cert-layout p {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* O badge wrapper */
+.google-cert-layout .badge-wrapper {
+  flex-basis: 150px; /* Largura do badge */
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin: 0; /* Remove margens anteriores */
+}
+
+/* O wrapper dos tópicos (h4 e ul) */
+.google-cert-layout .topics-wrapper {
+  flex-basis: 300px; /* Base para cálculo do flexbox */
+  flex-grow: 1; /* Ocupa o espaço restante */
+}
+
+.google-cert-layout .topics-wrapper h4 {
+  margin-top: 0; /* Remove margem superior para melhor alinhamento */
+}
+
 /* Responsividade */
 @media (max-width: 700px) {
   /* Uma coluna em telas menores */
@@ -180,8 +213,10 @@
   }
 }
 
-/* --- Estilo para o Badge Credly (ADICIONADO) --- */
-.badge-wrapper {
-  text-align: center;
-  margin: 15px 0 20px 0;
+/* Responsividade específica do layout do badge */
+@media (max-width: 540px) { /* Ponto de quebra onde 150px + 300px + gap não cabem */
+  .google-cert-layout {
+    /* Centraliza o badge quando ele quebra (flex-wrap) */
+    justify-content: center;
+  }
 }
