@@ -1,3 +1,61 @@
+# 🌐 Data Scientist & Full Stack Developer
+
+**Website:** [https://clusterjedi.github.io](https://clusterjedi.github.io)
+**LinkedIn:** [https://www.linkedin.com/in/trindadde](https://www.linkedin.com/in/trindadde)
+
+Personal portfolio and professional website of **Matheus Trindade**, integrating Data Science, Full Stack Development, and Applied Economics.
+The site presents background information, detailed education, selected projects (including case studies), online CV, academic interests, and ways to connect for collaborations or freelance work.
+
+---
+
+## 🧠 Overview
+
+This website was designed as a bilingual platform (Portuguese 🇧🇷 / English 🇬🇧) to:
+
+- Showcase professional trajectory, academic background, and certifications.
+- Present selected projects in **Data Science** and **Web Development**, including a detailed case study.
+- Highlight technical skills and professional goals.
+- Provide an accessible online CV (HTML), alongside the downloadable PDF version.
+- Offer a secure contact form (via Formspree) and links to professional/academic networks.
+
+---
+
+## 🧰 Tech Stack & Features
+
+- **HTML5**, **CSS3**, **JavaScript (Vanilla)**
+- **Responsive Design** (mobile-friendly layout)
+- **Multi-language support (PT/EN)** via client-side script
+- **Contact Form** integrated with [Formspree](https://formspree.io/)
+- Verified Badge from [Credly](https://www.credly.com/) for certification
+- **Image Optimization** (WEBP with PNG fallback)
+- **Structured Data (JSON-LD)** for SEO
+- Hosted on **GitHub Pages**
+
+---
+
+## 🧩 Structure
+
+```text
+clusterjedi.github.io/
+│
+├── index.html              # Main bilingual portfolio page
+├── formacao.html           # Page with education/certification details
+├── projeto-bellabeat.html  # Bellabeat case study page
+├── cv.html                 # Online CV (HTML) page
+│
+├── estilos.css             # Global and main page styles
+├── formacao.css            # Education page styles
+├── projeto.css             # Project page styles
+├── cv.css                  # CV page styles
+│
+├── img1.png                # Profile image (fallback)
+├── img1.webp               # Optimized profile image (WEBP)
+│
+├── PT-Curriculo_MT.pdf     # Résumé in Portuguese (PDF)
+├── EN-Curriculo_MT.pdf     # Résumé in English (PDF)
+│
+└── README.md               # This file
+
 # 🌐 Data Scientist & Full Stack Developer - Matheus Trindade
 
 **Website:** [https://clusterjedi.github.io](https://clusterjedi.github.io)
