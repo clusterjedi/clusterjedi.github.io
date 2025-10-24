@@ -136,7 +136,7 @@
   color: #223;
 }
 
-/* --- Lista de disciplinas (CORREÇÃO AQUI) --- */
+/* --- Lista de disciplinas --- */
 .card-conteudo ul {
   list-style: none;
   padding-left: 0;
@@ -170,7 +170,7 @@
 
 /* Responsividade */
 @media (max-width: 700px) {
-  /* Uma coluna em telas menores (CORREÇÃO AQUI) */
+  /* Uma coluna em telas menores */
   .card-conteudo ul {
     column-count: 1;
   }
@@ -178,4 +178,10 @@
   .card-titulo h3 {
     font-size: 1.1em;
   }
+}
+
+/* --- Estilo para o Badge Credly (ADICIONADO) --- */
+.badge-wrapper {
+  text-align: center;
+  margin: 15px 0 20px 0;
 }
