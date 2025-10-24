@@ -56,6 +56,16 @@ clusterjedi.github.io/
 │
 └── README.md               # This file
 ```
+---
+## 🧭 Contact
+
+- 📝 **Form:** Available directly on the [website](https://clusterjedi.github.io)
+- 📧 **E-mail:** [trindadde@live.com](mailto:trindadde@live.com)
+- 💼 **LinkedIn:** [linkedin.com/in/trindadde](https://www.linkedin.com/in/trindadde)
+- 🐙 **GitHub:** [github.com/clusterjedi](https://github.com/clusterjedi)
+- 📊 **Kaggle:** [kaggle.com/clusterjedi](https://kaggle.com/clusterjedi)
+---
+
 # 🌐 Data Scientist & Full Stack Developer - Matheus Trindade
 
 **Website:** [https://clusterjedi.github.io](https://clusterjedi.github.io)
@@ -113,3 +123,13 @@ clusterjedi.github.io/
 ├── EN-Curriculo_MT.pdf     # Currículo em Inglês (PDF)
 │
 └── README.md               # Este arquivo
+```
+---
+## 🧭 Contato
+
+- 📝 **Formulário:** Disponível diretamente no [site](https://clusterjedi.github.io)
+- 📧 **E-mail:** [trindadde@live.com](mailto:trindadde@live.com)
+- 💼 **LinkedIn:** [linkedin.com/in/trindadde](https://www.linkedin.com/in/trindadde)
+- 🐙 **GitHub:** [github.com/clusterjedi](https://github.com/clusterjedi)
+- 📊 **Kaggle:** [kaggle.com/clusterjedi](https://kaggle.com/clusterjedi)
+---
