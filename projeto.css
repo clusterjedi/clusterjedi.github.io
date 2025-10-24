@@ -1,0 +1,79 @@
+/* --- Estilos para a página de Projeto --- */
+
+/* Ajusta o cabeçalho específico da página */
+.page-header.container {
+  padding-bottom: 20px; /* Menos padding inferior que formacao.html */
+}
+
+.project-subtitle {
+  font-size: 1.1em;
+  color: var(--muted);
+  max-width: 700px;
+  margin: 5px auto 0 auto; /* Menos margem superior */
+}
+
+/* Container principal do projeto */
+.project-container {
+  background: var(--card); /* Fundo branco como os cards */
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(20,30,40,0.04);
+}
+
+/* Seções do projeto */
+.project-section {
+  margin-bottom: 24px;
+}
+
+.project-section h2 {
+  font-size: 1.4em; /* Tamanho um pouco menor que h2 da formacao */
+  color: #223;
+  border-bottom: 2px solid #e0e6ec;
+  padding-bottom: 8px;
+  margin-top: 0; /* Remove margem superior do h2 */
+  margin-bottom: 16px;
+  text-align: left; /* Alinha à esquerda */
+}
+
+.project-section p {
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.project-section ul {
+  list-style: disc; /* Estilo de lista padrão */
+  padding-left: 20px;
+  color: var(--muted);
+}
+.project-section ul li {
+   margin-bottom: 8px;
+}
+
+/* Seção de links/botões */
+.project-links h2 {
+   border-bottom: none; /* Remove a linha do último h2 */
+   margin-bottom: 10px;
+}
+
+.project-buttons {
+  /* Herda 'display: flex' e 'gap' da classe .actions */
+  flex-wrap: wrap; /* Permite que os botões quebrem a linha */
+  margin-top: 0; /* Remove margem superior padrão de .actions */
+}
+
+/* Ajusta botões outline para ter cor de texto correta */
+.project-buttons .btn-outline {
+  color: var(--accent);
+}
+
+/* Link inline dentro do texto */
+.project-section a.link {
+  color: var(--accent-2);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent-2);
+}
+.project-section a.link:hover {
+  text-decoration: none;
+  border-bottom-style: solid;
+}

@@ -72,7 +72,7 @@
           <button type="submit" id="submit-btn" class="btn">Enviar</button>
         </form>
         
-        </section>
+      </section>
 
       <section class="card">
         <h2 id="education_title">Formação</h2>
@@ -96,37 +96,18 @@
             <span id="education-academic-links-text">(rodapé)</span>
           </p>
         </div>
-        </section>
+
+      </section>
     </div>
 
     <section class="card">
         <h2 id="skills_title">Competências</h2>
         <ul class="chips" id="skills_list">
-          <li>Análise de Dados</li>
-          <li>Machine Learning</li>
-          <li>Deep Learning (TensorFlow)</li>
-          <li>Python (Pandas, Scikit-learn)</li>
-          <li>R</li>
-          <li>Visualização de Dados</li>
-          <li>Power BI / Tableau</li>
-          <li>Dashboards</li>
-          <li>Ggplot2</li>
-          <li>Rmarkdown</li>
-          <li>Storytelling de dados</li>
-          <li>SQL (PostgreSQL, MySQL)</li>
-          <li>NoSQL (MongoDB)</li>
-          <li>Limpeza de Dados</li>
-          <li>Validação de Dados</li>
-          <li>Estatística</li>
-          <li>Big Data (Spark)</li>
-          <li>React / Next.js</li>
-          <li>Node.js</li>
-          <li>Django / Flask</li>
-          <li>APIs REST / GraphQL</li>
-          <li>Flutter</li>
-          <li>Docker / Kubernetes</li>
-          <li>CI/CD</li>
-          <li>Ética de Dados</li>
+          <li>Análise de Dados</li> <li>Machine Learning</li> <li>Deep Learning (TensorFlow)</li> <li>Python (Pandas, Scikit-learn)</li> <li>R</li>
+          <li>Visualização de Dados</li> <li>Power BI / Tableau</li> <li>Dashboards</li> <li>Ggplot2</li> <li>Rmarkdown</li> <li>Storytelling de dados</li>
+          <li>SQL (PostgreSQL, MySQL)</li> <li>NoSQL (MongoDB)</li> <li>Limpeza de Dados</li> <li>Validação de Dados</li> <li>Estatística</li> <li>Big Data (Spark)</li>
+          <li>React / Next.js</li> <li>Node.js</li> <li>Django / Flask</li> <li>APIs REST / GraphQL</li> <li>Flutter</li>
+          <li>Docker / Kubernetes</li> <li>CI/CD</li> <li>Ética de Dados</li>
         </ul>
     </section>
     
@@ -134,8 +115,9 @@
       <section class="card">
         <h2 id="projects_title">Projetos selecionados</h2>
         <p id="projects_text">Meu portfólio prático está em constante desenvolvimento. Você pode encontrar implementações de modelos de ML, notebooks de análise exploratória e projetos de desenvolvimento web completos nos links abaixo.</p>
-        <ul>
-          <li><a href="https://github.com/clusterjedi" target="_blank" rel="noopener noreferrer">GitHub — projetos de Data Science e Full-Stack</a></li>
+        <ul id="projects_list">
+          <li><a href="projeto-bellabeat.html?lang=pt" id="project-bellabeat-link-pt">Estudo de Caso: Análise de Dados Bellabeat (Google Capstone)</a></li>
+          <li><a href="https://github.com/clusterjedi" target="_blank" rel="noopener noreferrer">GitHub — mais projetos de Data Science e Full-Stack</a></li>
           <li><a href="https://kaggle.com/clusterjedi" target="_blank" rel="noopener noreferrer">Kaggle — kernels e notebooks</a></li>
         </ul>
       </section>
@@ -185,7 +167,6 @@
             "Bacharelado em Matemática — UNESP (2019)",
             "Técnico em Informática (ETEC, 2003)"
         ],
-        // *** Chaves adicionadas para links na seção Educação ***
         education_linkedin_label: "LinkedIn:",
         education_academic_links_label: "Links acadêmicos:",
         education_academic_links_text: "(rodapé)",
@@ -207,6 +188,12 @@
         ],
         projects_title: "Projetos selecionados",
         projects_text: "Meu portfólio prático está em constante desenvolvimento. Você pode encontrar implementações de modelos de ML, notebooks de análise exploratória e projetos de desenvolvimento web completos nos links abaixo.",
+        // *** TRADUÇÃO PT ADICIONADA PARA O LINK DO PROJETO ***
+        projects_list_items: [
+          'Estudo de Caso: Análise de Dados Bellabeat (Google Capstone)',
+          'GitHub — mais projetos de Data Science e Full-Stack',
+          'Kaggle — kernels e notebooks'
+        ],
         contact_title: "Contato",
         label_name: "Nome",
         label_email: "Email",
@@ -215,7 +202,6 @@
         placeholder_email: "seu@email.com",
         placeholder_message: "Sua Mensagem...",
         submit_btn: "Enviar"
-        // Chaves contact_academic_links removidas
       },
       en: {
         role: "Data Scientist · Full Stack Developer",
@@ -231,7 +217,6 @@
             "B.Sc. in Mathematics — UNESP (2019)",
             "Technical Degree in Informatics (ETEC, 2003)"
         ],
-         // *** Chaves adicionadas para links na seção Educação ***
         education_linkedin_label: "LinkedIn:",
         education_academic_links_label: "Academic links:",
         education_academic_links_text: "(footer)",
@@ -253,6 +238,12 @@
         ],
         projects_title: "Selected Projects",
         projects_text: "My practical portfolio is constantly evolving. You can find ML model implementations, exploratory analysis notebooks, and complete web development projects in the links below.",
+         // *** TRADUÇÃO EN ADICIONADA PARA O LINK DO PROJETO ***
+        projects_list_items: [
+          'Case Study: Bellabeat Data Analysis (Google Capstone)',
+          'GitHub — more Data Science & Full-Stack projects',
+          'Kaggle — kernels & notebooks'
+        ],
         contact_title: "Contact",
         label_name: "Name",
         label_email: "Email",
@@ -261,7 +252,6 @@
         placeholder_email: "your@email.com",
         placeholder_message: "Your Message...",
         submit_btn: "Send"
-        // Chaves contact_academic_links removidas
       }
     };
 
@@ -276,6 +266,9 @@
         'about_title': 'about_title',
         'about_text': 'about_text', // innerHTML
         'education_title': 'education_title',
+        'education-linkedin-label': 'education_linkedin_label', // strong
+        'education-academic-links-label': 'education_academic_links_label', // strong
+        'education-academic-links-text': 'education_academic_links_text', // span
         'skills_title': 'skills_title',
         'goals_title': 'goals_title',
         'projects_title': 'projects_title',
@@ -287,11 +280,7 @@
         'name-input': 'placeholder_name', // placeholder
         'email-input': 'placeholder_email', // placeholder
         'message-input': 'placeholder_message', // placeholder
-        'submit-btn': 'submit_btn', // button text
-        // *** IDs atualizados para os links na seção Educação ***
-        'education-linkedin-label': 'education_linkedin_label', // strong
-        'education-academic-links-label': 'education_academic_links_label', // strong
-        'education-academic-links-text': 'education_academic_links_text' // span
+        'submit-btn': 'submit_btn' // button text
       };
 
       for (const [id, key] of Object.entries(elementsToUpdate)) {
@@ -304,9 +293,7 @@
           } else if (key.startsWith('placeholder_')) {
             el.setAttribute('placeholder', value);
           } else {
-             // Atualiza innerText para labels, títulos, parágrafos, botão, span
              el.innerText = value;
-             // Caso especial para o strong
              if (id === 'education-linkedin-label' || id === 'education-academic-links-label') {
                el.innerHTML = `<strong>${value}</strong>`;
              }
@@ -328,6 +315,21 @@
       const goals = document.getElementById('goals_list');
       goals.innerHTML = '';
       c.goals_list.forEach(i => goals.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+
+      // *** ATUALIZA LISTA DE PROJETOS ***
+      const projectsList = document.getElementById('projects_list');
+      const projectLinks = projectsList.getElementsByTagName('a'); // Pega todos os links dentro da lista
+      if (projectLinks.length === c.projects_list_items.length) {
+        for (let i = 0; i < projectLinks.length; i++) {
+          projectLinks[i].innerText = c.projects_list_items[i]; // Atualiza o texto de cada link
+          // Atualiza o href do link do Bellabeat para incluir o idioma correto
+          if (projectLinks[i].id === 'project-bellabeat-link-pt' || projectLinks[i].id === 'project-bellabeat-link-en') { // Usando os IDs adicionados
+             projectLinks[i].href = `projeto-bellabeat.html?lang=${lang}`;
+             projectLinks[i].id = `project-bellabeat-link-${lang}`; // Atualiza o ID se necessário
+          }
+        }
+      }
+
 
       // Atualiza botões de idioma
       document.getElementById('lang-pt').classList.toggle('active', lang === 'pt');
