@@ -5,19 +5,22 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Estudo de Caso: Bellabeat — Matheus Trindade</title>
   <link rel="stylesheet" href="estilos.css">
-  <link rel="stylesheet" href="projeto.css"> <meta name="description" content="Análise de dados de uso de dispositivos fitness da Bellabeat para identificar oportunidades de crescimento." />
+  <link rel="stylesheet" href="projeto.css">
+  <meta name="description" content="Análise de dados de uso de dispositivos fitness da Bellabeat para identificar oportunidades de crescimento." />
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link" id="skip-link">Pular para conteúdo principal</a>
+
   <div id="lang-pt" style="display: none;">
-    <header class="page-header container">
+    <header class="page-header container" role="banner">
       <a href="index.html" class="back-link">&larr; Voltar ao Início</a>
       <h1>Estudo de Caso: Bellabeat</h1>
       <p class="project-subtitle">Análise de Dados de Dispositivos Fitness Inteligentes</p>
     </header>
 
-    <main class="container project-container">
-      
+    <main class="container project-container" role="main" id="main-content">
+
       <section class="project-section">
         <h2>Problema e Objetivo</h2>
         <p>
@@ -44,7 +47,7 @@
       </section>
 
       <section class="project-section">
-         <h2>Resultados e Recomendações</h2>
+        <h2>Resultados e Recomendações</h2>
         <p>
           A análise revelou insights importantes, como a forte correlação positiva entre passos diários e calorias queimadas, e a identificação de dias específicos da semana (ex: terças-feiras) com menor atividade média. Também foram observados diferentes perfis de uso, com alguns usuários utilizando o dispositivo de forma mais consistente que outros.
         </p>
@@ -62,21 +65,21 @@
           <a href="https://github.com/clusterjedi/bellabeat-casestudy" class="btn" target="_blank" rel="noopener noreferrer">Ver Código (GitHub)</a>
           <a href="https://www.kaggle.com/code/clusterjedi/bellabeat-case-study-a-deep-dive-into-user-habits" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Ver Notebook (Kaggle)</a>
           <a href="https://public.tableau.com/views/Capstone1-en/MainDashboard_En" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Ver Dashboard (Tableau)</a>
-          </div>
+        </div>
       </section>
 
     </main>
   </div>
 
   <div id="lang-en" style="display: none;">
-    <header class="page-header container">
+    <header class="page-header container" role="banner">
       <a href="index.html" class="back-link">&larr; Back to Home</a>
       <h1>Case Study: Bellabeat</h1>
       <p class="project-subtitle">Analysis of Smart Fitness Device Data</p>
     </header>
 
-    <main class="container project-container">
-      
+    <main class="container project-container" role="main" id="main-content">
+
       <section class="project-section">
         <h2>Problem and Objective</h2>
         <p>
@@ -103,15 +106,15 @@
       </section>
 
       <section class="project-section">
-         <h2>Results and Recommendations</h2>
+        <h2>Results and Recommendations</h2>
         <p>
           The analysis revealed key insights, such as the strong positive correlation between daily steps and calories burned, and the identification of specific weekdays (e.g., Tuesdays) with lower average activity. Different usage profiles were also observed, with some users engaging with the device more consistently than others.
         </p>
         <p>Based on these findings, the main recommendations for Bellabeat are:</p>
         <ul>
           <li><strong>Personalized Notifications (Daily Engagement):</strong> Send contextual notifications to less active users during their low-activity times, suggesting simple actions (e.g., "How about a quick walk to reach your step goal?").</li>
-          <li><strong>Mid-Week Social Challenges (In-App Engagement):</strong> Launch challenges within the Bellabeat app focused on lower-activity days (e.g., "Active Tuesday"), incorporating gamification and social interaction to motivate usage.</li>
-          <li><strong>Holistic Positioning (Brand Strategy):</strong> Leverage the steps-calories correlation in marketing campaigns to position Bellabeat products as overall wellness tools, connecting product features to tangible benefits desired by the female target audience.</li>
+          <li><strong>Mid-Week Social Challenges (In-App Engagement):</strong> Launch challenges within the Bellabeat app focused specifically on lower-activity days (like Tuesday in our analysis). For example, an "Active Tuesday" challenge where users can compete with friends to see who reaches 7,000 steps first.</li>
+          <li><strong>Holistic Positioning (Brand Strategy):</strong> Leverage the steps-calories correlation in marketing campaigns to position Bellabeat products not just as fitness trackers, but as tools for overall well-being. Campaigns can highlight how small changes in daily activity, tracked by the device, lead to concrete benefits (like "burn the equivalent of an extra piece of chocolate a day with just a 20-minute walk").</li>
         </ul>
       </section>
 
@@ -121,28 +124,31 @@
           <a href="https://github.com/clusterjedi/bellabeat-casestudy" class="btn" target="_blank" rel="noopener noreferrer">View Code (GitHub)</a>
           <a href="https://www.kaggle.com/code/clusterjedi/bellabeat-case-study-a-deep-dive-into-user-habits" class="btn btn-outline" target="_blank" rel="noopener noreferrer">View Notebook (Kaggle)</a>
           <a href="https://public.tableau.com/views/Capstone1-en/MainDashboard_En" class="btn btn-outline" target="_blank" rel="noopener noreferrer">View Dashboard (Tableau)</a>
-           </div>
+        </div>
       </section>
 
     </main>
   </div>
 
   <script>
-    // Script para ler o parâmetro da URL e exibir o idioma correto
+    // Script para ler o parâmetro da URL, exibir o idioma correto E TRADUZIR O SKIP LINK
     document.addEventListener('DOMContentLoaded', function() {
-      // Pega os parâmetros da URL
       const params = new URLSearchParams(window.location.search);
-      // Verifica se o parâmetro 'lang' é 'pt'
       const lang = params.get('lang') === 'pt' ? 'pt' : 'en'; // 'en' é o padrão
+      const skipLink = document.getElementById('skip-link'); // <-- Pega o elemento skip-link
 
       if (lang === 'pt') {
         document.getElementById('lang-pt').style.display = 'block';
         document.getElementById('lang-en').style.display = 'none';
-        document.documentElement.lang = 'pt-BR'; // Atualiza o lang do HTML
+        document.documentElement.lang = 'pt-BR';
+        // *** TRADUZ SKIP LINK (PT) ***
+        if (skipLink) skipLink.textContent = "Pular para conteúdo principal";
       } else {
         document.getElementById('lang-en').style.display = 'block';
         document.getElementById('lang-pt').style.display = 'none';
-        document.documentElement.lang = 'en'; // Atualiza o lang do HTML
+        document.documentElement.lang = 'en';
+         // *** TRADUZ SKIP LINK (EN) ***
+        if (skipLink) skipLink.textContent = "Skip to main content";
       }
     });
   </script>

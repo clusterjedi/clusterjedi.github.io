@@ -24,7 +24,9 @@
 </head>
 <body>
 
-  <header class="site-header container">
+  <a href="#main-content" class="skip-link" id="skip-link">Skip to main content</a>
+
+  <header class="site-header container" role="banner">
     <div class="hero">
 
       <picture>
@@ -55,13 +57,13 @@
       </div>
     </div>
 
-    <nav class="top-nav">
+    <nav class="top-nav" aria-label="Seleção de idioma" id="lang-nav-label">
       <button id="lang-pt" class="lang-btn" onclick="updateText('pt')">PT</button>
       <button id="lang-en" class="lang-btn active" onclick="updateText('en')">EN</button>
     </nav>
   </header>
 
-  <main class="container">
+  <main class="container" role="main" id="main-content">
 
     <section class="card">
       <h2 id="about_title">Sobre</h2>
@@ -174,6 +176,8 @@
     // Objeto de conteúdo bilíngue
     const content = {
       pt: {
+        skip_link_text: "Pular para conteúdo principal", // <-- NOVO
+        lang_nav_label: "Seleção de idioma", // <-- NOVO
         role: "Cientista de Dados · Desenvolvedor Full Stack",
         portfolio_btn: "Ver Portfólio",
         cv_online_btn_pt: "CV Online (PT)",
@@ -181,7 +185,6 @@
         cv_online_btn_en: "CV Online (EN)",
         pdf_download_link_en: "(PDF)",
         about_title: "Sobre",
-        // *** target="_blank" REMOVIDO DAQUI ***
         about_text: 'Sou <a href="formacao.html?lang=pt" rel="noopener noreferrer" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python), com foco em impacto social e aplicações práticas.',
         education_title: "Formação",
         education_list: [
@@ -230,6 +233,8 @@
         form_error_msg: "Oops! Houve um problema ao enviar sua mensagem."
       },
       en: {
+        skip_link_text: "Skip to main content", // <-- NOVO
+        lang_nav_label: "Language selection", // <-- NOVO
         role: "Data Scientist · Full Stack Developer",
         portfolio_btn: "View Portfolio",
         cv_online_btn_pt: "Online CV (PT)",
@@ -237,7 +242,6 @@
         cv_online_btn_en: "Online CV (EN)",
         pdf_download_link_en: "(PDF)",
         about_title: "About",
-        // *** target="_blank" REMOVIDO DAQUI ***
         about_text: 'I hold a <a href="formacao.html?lang=en" rel="noopener noreferrer" class="inline-link">B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC)</a>. My background combines analytical rigor with the development of end-to-end tech solutions, from data modeling (Machine Learning, Statistics) to creating web/mobile apps (React, Node, Python), focused on social impact and practical solutions.',
         education_title: "Education",
         education_list: [
@@ -287,15 +291,17 @@
       }
     };
 
-    // Função para atualizar o texto (mantida igual)
+    // Função para atualizar o texto
     function updateText(lang) {
       const c = content[lang];
 
       const elementsToUpdate = {
+        'skip-link': 'skip_link_text', // <-- NOVO
+        'lang-nav-label': 'lang_nav_label', // <-- NOVO (aria-label)
         'role': 'role', 'portfolio-btn': 'portfolio_btn',
         'cv-pt': 'cv_online_btn_pt', 'pdf-pt-link': 'pdf_download_link_pt',
         'cv-en': 'cv_online_btn_en', 'pdf-en-link': 'pdf_download_link_en',
-        'about_title': 'about_title', 'about_text': 'about_text',
+        'about_title': 'about_title', 'about_text': 'about_text', // innerHTML
         'education_title': 'education_title', 'education-linkedin-label': 'education_linkedin_label',
         'education-academic-links-label': 'education_academic_links_label',
         'education-academic-links-text': 'education_academic_links_text',
@@ -316,6 +322,8 @@
             el.innerHTML = value;
           } else if (key.startsWith('placeholder_')) {
             el.setAttribute('placeholder', value);
+          } else if (key === 'lang_nav_label') { // <-- NOVO: Atualiza aria-label
+             el.setAttribute('aria-label', value);
           } else {
              el.innerText = value;
              if (id === 'education-linkedin-label' || id === 'education-academic-links-label') {
@@ -327,7 +335,7 @@
         }
       }
 
-      // Atualiza listas (mantido igual)
+      // Atualiza listas
       const education = document.getElementById('education_list');
       if (education) {
         education.innerHTML = '';
@@ -358,7 +366,7 @@
         }
       }
 
-      // Atualiza botões (mantido igual)
+      // Atualiza botões
       document.getElementById('lang-pt').classList.toggle('active', lang === 'pt');
       document.getElementById('lang-en').classList.toggle('active', lang === 'en');
       document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
@@ -374,7 +382,7 @@
       if(pdfEnLink) pdfEnLink.style.display = (lang === 'en') ? 'inline' : 'none';
     }
 
-    // Inicializa o texto com o idioma inglês (mantido igual)
+    // Inicializa o texto com o idioma inglês
     document.addEventListener('DOMContentLoaded', () => {
       updateText('en');
     });

@@ -218,3 +218,70 @@ a.link:hover{text-decoration:underline}
   color: #721c24; /* Texto vermelho escuro */
   border: 1px solid #f5c6cb;
 }
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--accent);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* --- Acessibilidade: Skip Link --- */
+.skip-link {
+  position: absolute;
+  top: -40px; /* Esconde fora da tela por padrão */
+  left: 6px;
+  background: var(--accent);
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  z-index: 1000; /* Garante que fique sobre outros elementos */
+  border-radius: 4px;
+  font-weight: 600;
+  transition: top 0.2s ease-in-out; /* Adiciona transição suave */
+}
+
+/* Mostra o link quando ele recebe foco (via Tab) */
+.skip-link:focus {
+  top: 6px;
+}
+
+/* --- Acessibilidade: Melhorar focus para teclado --- */
+a:focus,
+button:focus,
+summary:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid var(--accent-2); /* Borda mais visível */
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.3); /* Adiciona um brilho suave */
+}
+
+/* Remove outline padrão do navegador APENAS se já tivermos um estilo customizado */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+summary:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Estilo específico para :focus-visible para navegadores modernos */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.3);
+}
