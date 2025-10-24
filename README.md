@@ -55,7 +55,7 @@ clusterjedi.github.io/
 ├── EN-Curriculo_MT.pdf     # Résumé in English (PDF)
 │
 └── README.md               # This file
-
+```
 # 🌐 Data Scientist & Full Stack Developer - Matheus Trindade
 
 **Website:** [https://clusterjedi.github.io](https://clusterjedi.github.io)
