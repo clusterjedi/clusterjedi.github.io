@@ -8,6 +8,7 @@
   --radius: 10px;
   --maxw: 1100px;
   font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  scroll-behavior: smooth; /* *** ROLAGEM SUAVE ADICIONADA *** */
 }
 
 *{box-sizing:border-box}
@@ -29,24 +30,35 @@ body{
 .role{margin:6px 0;color:var(--muted)}
 
 /* actions */
-.actions{margin-top:8px;display:flex;flex-wrap:wrap;gap:10px} /* Adicionado flex-wrap */
-.btn{display:inline-block;padding:8px 12px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:600}
-.btn-outline{background:#fff;border:1px solid var(--accent);color:var(--accent)}
+.actions{margin-top:8px;display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:8px 12px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:600; transition: background-color 0.2s ease, transform 0.2s ease; /* Transição base */}
+.btn-outline{background:#fff;border:1px solid var(--accent);color:var(--accent); transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Transição base */}
 
-/* --- NOVO: Estilos para links PDF --- */
+/* *** MICRO-INTERAÇÃO HOVER ADICIONADA *** */
+.btn:hover {
+  background-color: var(--accent-2); /* Escurece um pouco no hover */
+  transform: translateY(-2px); /* Eleva ligeiramente */
+}
+.btn-outline:hover {
+  background-color: rgba(44, 152, 217, 0.05); /* Fundo leve no hover */
+  transform: translateY(-2px); /* Eleva ligeiramente */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+/* --- Estilos para links PDF --- */
 .pdf-links {
-  margin-top: 6px; /* Espaço acima dos links PDF */
-  margin-bottom: 8px; /* Espaço abaixo dos links PDF, antes do .meta */
+  margin-top: 6px;
+  margin-bottom: 8px;
   display: flex;
-  gap: 10px; /* Espaço entre os links PT e EN */
+  gap: 10px;
   align-items: center;
 }
 .pdf-links a {
-  font-size: 0.85em; /* Fonte menor */
-  color: var(--muted); /* Cor cinza */
+  font-size: 0.85em;
+  color: var(--muted);
 }
 
-/* meta links (email, github, etc) */
+/* meta links (github, kaggle) */
 .meta{margin-top:10px;font-size:0.9rem}
 
 /* nav (lang) */
@@ -70,15 +82,14 @@ main{margin-top:18px}
 
 /* footer */
 .site-footer{margin-top:10px;padding:16px 0;background:transparent}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;font-size:0.9rem;color:var(--muted)}
+/* Regras do .site-footer movidas para o final para garantir a ordem */
 
 /* responsive */
 @media (max-width:800px){
   .grid{grid-template-columns:1fr}
   .hero{flex-direction:column;align-items:center;text-align:center}
-  .meta{display:block}
-  .hero-text{max-width:70%}
-  /* --- NOVO: Ajusta PDF links em telas menores --- */
+  .meta{display:flex; justify-content:center;} /* Centraliza meta links */
+  .hero-text{max-width:90%} /* Aumenta um pouco a largura */
   .pdf-links { justify-content: center; } /* Centraliza os links PDF */
 }
 
@@ -86,7 +97,7 @@ main{margin-top:18px}
 a.link{color:var(--accent-2);text-decoration:none}
 a.link:hover{text-decoration:underline}
 
-/* --- link inline (adicionado) --- */
+/* --- link inline --- */
 .inline-link {
   color: var(--accent-2);
   font-weight: 600;
@@ -102,24 +113,21 @@ a.link:hover{text-decoration:underline}
 /* --- Rodapé (Footer) --- */
 .site-footer {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px; 
-  
+  gap: 10px;
   margin-top: 24px;
   padding-top: 18px;
-  border-top: 1px solid #e0e6ec; 
+  border-top: 1px solid #e0e6ec;
   color: var(--muted, #556);
   font-size: 0.9rem;
 }
-
 .site-footer nav {
   display: flex;
   align-items: center;
-  gap: 6px; 
+  gap: 6px;
 }
-
 .site-footer nav a {
   color: var(--muted, #556);
 }
@@ -128,11 +136,9 @@ a.link:hover{text-decoration:underline}
 .contact-form {
   margin-top: 15px;
 }
-
 .form-group {
   margin-bottom: 15px;
 }
-
 .contact-form label {
   display: block;
   margin-bottom: 5px;
@@ -140,116 +146,106 @@ a.link:hover{text-decoration:underline}
   font-size: 0.9em;
   color: var(--muted);
 }
-
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #dbe6f0; 
+  border: 1px solid #dbe6f0;
   border-radius: 6px;
   font-size: 1em;
-  font-family: inherit; 
-  background-color: #fcfdfe; 
+  font-family: inherit;
+  background-color: #fcfdfe;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
+/* Estilo específico para o campo honeypot (não essencial, mas garante ocultação) */
+input[name="_gotcha"] {
+  position: absolute;
+  left: -5000px;
+  visibility: hidden;
+}
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
-  outline: none;
-  border-color: var(--accent); 
-  box-shadow: 0 0 0 2px rgba(44, 152, 217, 0.2); 
+  /* Estilos de foco já cobertos pela regra global de acessibilidade */
 }
-
 .contact-form textarea {
-  resize: vertical; 
+  resize: vertical;
   min-height: 80px;
 }
-
 .contact-form button[type="submit"] {
   cursor: pointer;
 }
 
 /* --- Estilos para links adicionais na seção Educação --- */
 .section-divider {
-  border: none; 
-  height: 1px; 
-  background-color: #e0e6ec; 
-  margin: 20px 0 15px 0; 
+  border: none;
+  height: 1px;
+  background-color: #e0e6ec;
+  margin: 20px 0 15px 0;
 }
-
 .additional-links {
-  font-size: 0.9em; 
-  color: var(--muted); 
+  font-size: 0.9em;
+  color: var(--muted);
 }
-
 .additional-links p {
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 /* --- Estilos para o Status do Formulário de Contato --- */
 .form-status {
-  margin-top: 15px; /* Espaço acima da mensagem */
+  margin-top: 15px;
   padding: 10px;
   border-radius: 6px;
   font-size: 0.9em;
   font-weight: 500;
-  display: none; /* Começa escondido */
+  opacity: 0; /* Começa invisível para fade-in */
+  transition: opacity 0.3s ease-in-out; /* Transição de opacidade */
+  display: none; /* Mantém display none inicial */
 }
-
+/* Animação Keyframes para Fade In */
+@keyframes fadeInStatus {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Aplica display block e animação quando a classe é adicionada */
+.form-status.sending,
+.form-status.success,
+.form-status.error {
+  display: block;
+  animation: fadeInStatus 0.3s forwards; /* Aplica o fade-in */
+}
 .form-status.sending {
-  display: block; /* Mostra quando enviando */
-  background-color: #eef7ff; /* Fundo azul claro */
-  color: var(--accent-2); /* Texto azul */
-  border: 1px solid #cce5ff; 
+  background-color: #eef7ff;
+  color: var(--accent-2);
+  border: 1px solid #cce5ff;
 }
-
 .form-status.success {
-  display: block; /* Mostra quando sucesso */
-  background-color: #e6ffed; /* Fundo verde claro */
-  color: #1a7431; /* Texto verde escuro */
+  background-color: #e6ffed;
+  color: #1a7431;
   border: 1px solid #c3e6cb;
 }
-
 .form-status.error {
-  display: block; /* Mostra quando erro */
-  background-color: #f8d7da; /* Fundo vermelho claro */
-  color: #721c24; /* Texto vermelho escuro */
+  background-color: #f8d7da;
+  color: #721c24;
   border: 1px solid #f5c6cb;
 }
 
+
+/* --- Acessibilidade: Skip Link --- */
 .skip-link {
   position: absolute;
   top: -40px;
   left: 6px;
   background: var(--accent);
   color: white;
-  padding: 8px;
-  text-decoration: none;
-  z-index: 1000;
-}
-
-.skip-link:focus {
-  top: 6px;
-}
-
-/* --- Acessibilidade: Skip Link --- */
-.skip-link {
-  position: absolute;
-  top: -40px; /* Esconde fora da tela por padrão */
-  left: 6px;
-  background: var(--accent);
-  color: white;
   padding: 8px 12px;
   text-decoration: none;
-  z-index: 1000; /* Garante que fique sobre outros elementos */
+  z-index: 1000;
   border-radius: 4px;
   font-weight: 600;
-  transition: top 0.2s ease-in-out; /* Adiciona transição suave */
+  transition: top 0.2s ease-in-out;
 }
-
-/* Mostra o link quando ele recebe foco (via Tab) */
 .skip-link:focus {
   top: 6px;
 }
@@ -260,12 +256,10 @@ button:focus,
 summary:focus,
 input:focus,
 textarea:focus {
-  outline: 3px solid var(--accent-2); /* Borda mais visível */
+  outline: 3px solid var(--accent-2);
   outline-offset: 2px;
-  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.3); /* Adiciona um brilho suave */
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.3);
 }
-
-/* Remove outline padrão do navegador APENAS se já tivermos um estilo customizado */
 a:focus:not(:focus-visible),
 button:focus:not(:focus-visible),
 summary:focus:not(:focus-visible),
@@ -274,8 +268,6 @@ textarea:focus:not(:focus-visible) {
     outline: none;
     box-shadow: none;
 }
-
-/* Estilo específico para :focus-visible para navegadores modernos */
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
