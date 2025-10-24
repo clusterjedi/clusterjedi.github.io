@@ -55,12 +55,24 @@
     <div class="grid">
       <section class="card">
         <h2 id="contact_title">Contato</h2>
-        <ul>
-          <li><strong>Email:</strong> <a href="mailto:trindadde@live.com" class="link">trindadde@live.com</a></li>
-          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/trindadde" target="_blank" rel="noopener noreferrer" class="link">linkedin.com/in/trindadde</a></li>
-          <li id="contact_academic_links"><strong>Links acadêmicos:</strong> (rodapé)</li>
-        </ul>
-      </section>
+        
+        <form id="contact-form" action="https://formspree.io/f/xqayrjnp" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name-input" id="label-name">Nome</label>
+            <input type="text" id="name-input" name="name" required placeholder="Seu Nome">
+          </div>
+          <div class="form-group">
+            <label for="email-input" id="label-email">Email</label>
+            <input type="email" id="email-input" name="_replyto" required placeholder="seu@email.com">
+          </div>
+          <div class="form-group">
+            <label for="message-input" id="label-message">Mensagem</label>
+            <textarea id="message-input" name="message" rows="4" required placeholder="Sua Mensagem..."></textarea>
+          </div>
+          <button type="submit" id="submit-btn" class="btn">Enviar</button>
+        </form>
+        
+        </section>
 
       <section class="card">
         <h2 id="education_title">Formação</h2>
@@ -72,7 +84,19 @@
             <li>Bacharelado em Matemática — UNESP (2019)</li>
             <li>Técnico em Informática (ETEC, 2003)</li>
         </ul>
-      </section>
+
+        <hr class="section-divider">
+        <div class="additional-links">
+          <p>
+            <strong id="education-linkedin-label">LinkedIn:</strong> 
+            <a href="https://www.linkedin.com/in/trindadde" target="_blank" rel="noopener noreferrer" class="link">linkedin.com/in/trindadde</a>
+          </p>
+          <p>
+            <strong id="education-academic-links-label">Links acadêmicos:</strong> 
+            <span id="education-academic-links-text">(rodapé)</span>
+          </p>
+        </div>
+        </section>
     </div>
 
     <section class="card">
@@ -149,7 +173,7 @@
     const content = {
       pt: {
         role: "Cientista de Dados · Desenvolvedor Full Stack",
-        portfolio_btn: "Ver Portfólio", // <-- Texto PT adicionado
+        portfolio_btn: "Ver Portfólio", 
         about_title: "Sobre",
         about_text: 'Sou <a href="formacao.html?lang=pt" target="_blank" rel="noopener noreferrer" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python), com foco em impacto social e aplicações práticas.',
         education_title: "Formação",
@@ -161,6 +185,10 @@
             "Bacharelado em Matemática — UNESP (2019)",
             "Técnico em Informática (ETEC, 2003)"
         ],
+        // *** Chaves adicionadas para links na seção Educação ***
+        education_linkedin_label: "LinkedIn:",
+        education_academic_links_label: "Links acadêmicos:",
+        education_academic_links_text: "(rodapé)",
         skills_title: "Competências",
         skills_list: [
           'Análise de Dados', 'Machine Learning', 'Deep Learning (TensorFlow)', 'Python (Pandas, Scikit-learn)', 'R',
@@ -180,11 +208,18 @@
         projects_title: "Projetos selecionados",
         projects_text: "Meu portfólio prático está em constante desenvolvimento. Você pode encontrar implementações de modelos de ML, notebooks de análise exploratória e projetos de desenvolvimento web completos nos links abaixo.",
         contact_title: "Contato",
-        contact_academic_links: "<strong>Links acadêmicos:</strong> (rodapé)"
+        label_name: "Nome",
+        label_email: "Email",
+        label_message: "Mensagem",
+        placeholder_name: "Seu Nome",
+        placeholder_email: "seu@email.com",
+        placeholder_message: "Sua Mensagem...",
+        submit_btn: "Enviar"
+        // Chaves contact_academic_links removidas
       },
       en: {
         role: "Data Scientist · Full Stack Developer",
-        portfolio_btn: "View Portfolio", // <-- Texto EN adicionado
+        portfolio_btn: "View Portfolio", 
         about_title: "About",
         about_text: 'I hold a <a href="formacao.html?lang=en" target="_blank" rel="noopener noreferrer" class="inline-link">B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC)</a>. My background combines analytical rigor with the development of end-to-end tech solutions, from data modeling (Machine Learning, Statistics) to creating web/mobile apps (React, Node, Python), focused on social impact and practical solutions.',
         education_title: "Education",
@@ -196,6 +231,10 @@
             "B.Sc. in Mathematics — UNESP (2019)",
             "Technical Degree in Informatics (ETEC, 2003)"
         ],
+         // *** Chaves adicionadas para links na seção Educação ***
+        education_linkedin_label: "LinkedIn:",
+        education_academic_links_label: "Academic links:",
+        education_academic_links_text: "(footer)",
         skills_title: "Skills",
         skills_list: [
           'Data Analysis', 'Machine Learning', 'Deep Learning (TensorFlow)', 'Python (Pandas, Scikit-learn)', 'R',
@@ -215,7 +254,14 @@
         projects_title: "Selected Projects",
         projects_text: "My practical portfolio is constantly evolving. You can find ML model implementations, exploratory analysis notebooks, and complete web development projects in the links below.",
         contact_title: "Contact",
-        contact_academic_links: "<strong>Academic links:</strong> (footer)"
+        label_name: "Name",
+        label_email: "Email",
+        label_message: "Message",
+        placeholder_name: "Your Name",
+        placeholder_email: "your@email.com",
+        placeholder_message: "Your Message...",
+        submit_btn: "Send"
+        // Chaves contact_academic_links removidas
       }
     };
 
@@ -223,28 +269,47 @@
     function updateText(lang) {
       const c = content[lang];
       
+      // Mapeamento ID -> Chave de conteúdo
       const elementsToUpdate = {
-        'role': c.role,
-        'portfolio-btn': c.portfolio_btn, // <-- ID do botão adicionado aqui
-        'about_title': c.about_title,
-        'about_text': c.about_text, // innerHTML
-        'education_title': c.education_title,
-        'skills_title': c.skills_title,
-        'goals_title': c.goals_title,
-        'projects_title': c.projects_title,
-        'projects_text': c.projects_text, 
-        'contact_title': c.contact_title,
-        'contact_academic_links': c.contact_academic_links // innerHTML
+        'role': 'role',
+        'portfolio-btn': 'portfolio_btn', 
+        'about_title': 'about_title',
+        'about_text': 'about_text', // innerHTML
+        'education_title': 'education_title',
+        'skills_title': 'skills_title',
+        'goals_title': 'goals_title',
+        'projects_title': 'projects_title',
+        'projects_text': 'projects_text', 
+        'contact_title': 'contact_title',
+        'label-name': 'label_name', // label
+        'label-email': 'label_email', // label
+        'label-message': 'label_message', // label
+        'name-input': 'placeholder_name', // placeholder
+        'email-input': 'placeholder_email', // placeholder
+        'message-input': 'placeholder_message', // placeholder
+        'submit-btn': 'submit_btn', // button text
+        // *** IDs atualizados para os links na seção Educação ***
+        'education-linkedin-label': 'education_linkedin_label', // strong
+        'education-academic-links-label': 'education_academic_links_label', // strong
+        'education-academic-links-text': 'education_academic_links_text' // span
       };
 
-      for (const [k, v] of Object.entries(elementsToUpdate)) {
-        const el = document.getElementById(k);
+      for (const [id, key] of Object.entries(elementsToUpdate)) {
+        const el = document.getElementById(id);
+        const value = c[key];
+        
         if (el) {
-          // Usa innerHTML para textos que contêm HTML (link, strong)
-          if (k === 'about_text' || k === 'contact_academic_links') {
-            el.innerHTML = v;
+          if (key === 'about_text') {
+            el.innerHTML = value;
+          } else if (key.startsWith('placeholder_')) {
+            el.setAttribute('placeholder', value);
           } else {
-            el.innerText = v; // O botão usa innerText
+             // Atualiza innerText para labels, títulos, parágrafos, botão, span
+             el.innerText = value;
+             // Caso especial para o strong
+             if (id === 'education-linkedin-label' || id === 'education-academic-links-label') {
+               el.innerHTML = `<strong>${value}</strong>`;
+             }
           }
         }
       }
