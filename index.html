@@ -66,7 +66,7 @@
     <section class="card">
       <h2 id="about_title">Sobre</h2>
       <p id="about_text">
-        Sou <a href="formacao.html?lang=pt" target="_blank" rel="noopener noreferrer" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python), com foco em impacto social e aplicações práticas.
+        Sou <a href="formacao.html?lang=pt" rel="noopener noreferrer" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python), com foco em impacto social e aplicações práticas.
       </p>
     </section>
 
@@ -171,7 +171,7 @@
 
 
   <script>
-    // Objeto de conteúdo bilíngue (mantido igual)
+    // Objeto de conteúdo bilíngue
     const content = {
       pt: {
         role: "Cientista de Dados · Desenvolvedor Full Stack",
@@ -181,7 +181,8 @@
         cv_online_btn_en: "CV Online (EN)",
         pdf_download_link_en: "(PDF)",
         about_title: "Sobre",
-        about_text: 'Sou <a href="formacao.html?lang=pt" target="_blank" rel="noopener noreferrer" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python), com foco em impacto social e aplicações práticas.',
+        // *** target="_blank" REMOVIDO DAQUI ***
+        about_text: 'Sou <a href="formacao.html?lang=pt" rel="noopener noreferrer" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python), com foco em impacto social e aplicações práticas.',
         education_title: "Formação",
         education_list: [
             "Tecnologia da Informação (UFMS) — em andamento",
@@ -236,7 +237,8 @@
         cv_online_btn_en: "Online CV (EN)",
         pdf_download_link_en: "(PDF)",
         about_title: "About",
-        about_text: 'I hold a <a href="formacao.html?lang=en" target="_blank" rel="noopener noreferrer" class="inline-link">B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC)</a>. My background combines analytical rigor with the development of end-to-end tech solutions, from data modeling (Machine Learning, Statistics) to creating web/mobile apps (React, Node, Python), focused on social impact and practical solutions.',
+        // *** target="_blank" REMOVIDO DAQUI ***
+        about_text: 'I hold a <a href="formacao.html?lang=en" rel="noopener noreferrer" class="inline-link">B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC)</a>. My background combines analytical rigor with the development of end-to-end tech solutions, from data modeling (Machine Learning, Statistics) to creating web/mobile apps (React, Node, Python), focused on social impact and practical solutions.',
         education_title: "Education",
         education_list: [
             "B.Tech in Information Technology (UFMS) — in progress",
@@ -288,27 +290,27 @@
     // Função para atualizar o texto (mantida igual)
     function updateText(lang) {
       const c = content[lang];
-      
+
       const elementsToUpdate = {
-        'role': 'role', 'portfolio-btn': 'portfolio_btn', 
-        'cv-pt': 'cv_online_btn_pt', 'pdf-pt-link': 'pdf_download_link_pt', 
-        'cv-en': 'cv_online_btn_en', 'pdf-en-link': 'pdf_download_link_en', 
-        'about_title': 'about_title', 'about_text': 'about_text', 
-        'education_title': 'education_title', 'education-linkedin-label': 'education_linkedin_label', 
-        'education-academic-links-label': 'education_academic_links_label', 
-        'education-academic-links-text': 'education_academic_links_text', 
+        'role': 'role', 'portfolio-btn': 'portfolio_btn',
+        'cv-pt': 'cv_online_btn_pt', 'pdf-pt-link': 'pdf_download_link_pt',
+        'cv-en': 'cv_online_btn_en', 'pdf-en-link': 'pdf_download_link_en',
+        'about_title': 'about_title', 'about_text': 'about_text',
+        'education_title': 'education_title', 'education-linkedin-label': 'education_linkedin_label',
+        'education-academic-links-label': 'education_academic_links_label',
+        'education-academic-links-text': 'education_academic_links_text',
         'skills_title': 'skills_title', 'goals_title': 'goals_title',
-        'projects_title': 'projects_title', 'projects_text': 'projects_text', 
-        'contact_title': 'contact_title', 'label-name': 'label_name', 
-        'label-email': 'label_email', 'label-message': 'label_message', 
-        'name-input': 'placeholder_name', 'email-input': 'placeholder_email', 
-        'message-input': 'placeholder_message', 'submit-btn': 'submit_btn' 
+        'projects_title': 'projects_title', 'projects_text': 'projects_text',
+        'contact_title': 'contact_title', 'label-name': 'label_name',
+        'label-email': 'label_email', 'label-message': 'label_message',
+        'name-input': 'placeholder_name', 'email-input': 'placeholder_email',
+        'message-input': 'placeholder_message', 'submit-btn': 'submit_btn'
       };
 
       for (const [id, key] of Object.entries(elementsToUpdate)) {
         const el = document.getElementById(id);
         const value = c[key];
-        
+
         if (el) {
           if (key === 'about_text') {
             el.innerHTML = value;
@@ -343,14 +345,14 @@
        }
       const projectsList = document.getElementById('projects_list');
       if (projectsList) {
-        const projectLinks = projectsList.getElementsByTagName('a'); 
+        const projectLinks = projectsList.getElementsByTagName('a');
         if (projectLinks.length === c.projects_list_items.length) {
           for (let i = 0; i < projectLinks.length; i++) {
-            projectLinks[i].innerText = c.projects_list_items[i]; 
+            projectLinks[i].innerText = c.projects_list_items[i];
             const bellabeatLinkId = `project-bellabeat-link-${lang}`;
-            if (projectLinks[i].id && (projectLinks[i].id.startsWith('project-bellabeat-link'))) { 
+            if (projectLinks[i].id && (projectLinks[i].id.startsWith('project-bellabeat-link'))) {
               projectLinks[i].href = `projeto-bellabeat.html?lang=${lang}`;
-              projectLinks[i].id = bellabeatLinkId; 
+              projectLinks[i].id = bellabeatLinkId;
             }
           }
         }
@@ -365,7 +367,7 @@
       const cvEnBtn = document.getElementById('cv-en');
       if(cvPtBtn) cvPtBtn.classList.toggle('btn-outline', lang !== 'pt');
       if(cvEnBtn) cvEnBtn.classList.toggle('btn-outline', lang !== 'en');
-      
+
       const pdfPtLink = document.getElementById('pdf-pt-link');
       const pdfEnLink = document.getElementById('pdf-en-link');
       if(pdfPtLink) pdfPtLink.style.display = (lang === 'pt') ? 'inline' : 'none';
@@ -374,7 +376,7 @@
 
     // Inicializa o texto com o idioma inglês (mantido igual)
     document.addEventListener('DOMContentLoaded', () => {
-      updateText('en'); 
+      updateText('en');
     });
   </script>
 
@@ -386,7 +388,7 @@
 
       form.addEventListener('submit', function(event) {
         event.preventDefault(); // Impede o envio padrão
-        
+
         const formData = new FormData(form);
         const currentLang = document.documentElement.lang.startsWith('pt') ? 'pt' : 'en'; // Pega o idioma atual
         const successMsg = content[currentLang].form_success_msg;
@@ -428,8 +430,8 @@
            // Reabilita o botão após o envio (com ou sem erro)
            // Adiciona um pequeno delay para o usuário ver a mensagem antes do botão reativar
            setTimeout(() => {
-             submitButton.disabled = false; 
-           }, 1000); 
+             submitButton.disabled = false;
+           }, 1000);
         });
       });
     });
