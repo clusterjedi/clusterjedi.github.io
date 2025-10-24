@@ -24,6 +24,7 @@
         <div class="actions">
           <a id="cv-pt" class="btn" href="PT-Curriculo_MT.pdf" download>Currículo (PT)</a>
           <a id="cv-en" class="btn btn-outline" href="EN-Curriculo_MT.pdf" download>Resume (EN)</a>
+          <a id="portfolio-btn" class="btn" href="https://github.com/clusterjedi" target="_blank" rel="noopener noreferrer">View Portfolio</a> 
         </div>
 
         <div class="meta">
@@ -148,8 +149,8 @@
     const content = {
       pt: {
         role: "Cientista de Dados · Desenvolvedor Full Stack",
+        portfolio_btn: "Ver Portfólio", // <-- Texto PT adicionado
         about_title: "Sobre",
-        // *** CORREÇÃO AQUI (rel="noopener noreferrer") ***
         about_text: 'Sou <a href="formacao.html?lang=pt" target="_blank" rel="noopener noreferrer" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python), com foco em impacto social e aplicações práticas.',
         education_title: "Formação",
         education_list: [
@@ -183,8 +184,8 @@
       },
       en: {
         role: "Data Scientist · Full Stack Developer",
+        portfolio_btn: "View Portfolio", // <-- Texto EN adicionado
         about_title: "About",
-        // *** CORREÇÃO AQUI (rel="noopener noreferrer") ***
         about_text: 'I hold a <a href="formacao.html?lang=en" target="_blank" rel="noopener noreferrer" class="inline-link">B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC)</a>. My background combines analytical rigor with the development of end-to-end tech solutions, from data modeling (Machine Learning, Statistics) to creating web/mobile apps (React, Node, Python), focused on social impact and practical solutions.',
         education_title: "Education",
         education_list: [
@@ -224,6 +225,7 @@
       
       const elementsToUpdate = {
         'role': c.role,
+        'portfolio-btn': c.portfolio_btn, // <-- ID do botão adicionado aqui
         'about_title': c.about_title,
         'about_text': c.about_text, // innerHTML
         'education_title': c.education_title,
@@ -242,7 +244,7 @@
           if (k === 'about_text' || k === 'contact_academic_links') {
             el.innerHTML = v;
           } else {
-            el.innerText = v;
+            el.innerText = v; // O botão usa innerText
           }
         }
       }
@@ -262,11 +264,12 @@
       goals.innerHTML = '';
       c.goals_list.forEach(i => goals.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
 
-      // Atualiza botões
+      // Atualiza botões de idioma
       document.getElementById('lang-pt').classList.toggle('active', lang === 'pt');
       document.getElementById('lang-en').classList.toggle('active', lang === 'en');
       document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
 
+      // Atualiza botões de CV
       const cvPtBtn = document.getElementById('cv-pt');
       const cvEnBtn = document.getElementById('cv-en');
       cvPtBtn.classList.toggle('btn-outline', lang !== 'pt');
