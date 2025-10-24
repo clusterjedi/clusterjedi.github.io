@@ -101,3 +101,53 @@ a.link:hover{text-decoration:underline}
 .site-footer nav a {
   color: var(--muted, #556);
 }
+
+/* --- Estilos para o Formulário de Contato --- */
+.contact-form {
+  margin-top: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 0.9em;
+  color: var(--muted);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dbe6f0; /* Cor de borda sutil */
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: inherit; /* Usa a mesma fonte do body */
+  background-color: #fcfdfe; /* Fundo ligeiramente diferente */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent); /* Cor de destaque ao focar */
+  box-shadow: 0 0 0 2px rgba(44, 152, 217, 0.2); /* Sombra suave de foco */
+}
+
+.contact-form textarea {
+  resize: vertical; /* Permite redimensionar apenas verticalmente */
+  min-height: 80px;
+}
+
+/* O botão já pega o estilo .btn da sua folha de estilos */
+.contact-form button[type="submit"] {
+  cursor: pointer;
+  /* Adiciona um pouco de margem se necessário */
+  /* margin-top: 10px; */ 
+}
