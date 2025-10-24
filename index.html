@@ -21,7 +21,7 @@
     ]
   }
   </script>
-  </head>
+</head>
 <body>
 
   <header class="site-header container">
@@ -36,10 +36,15 @@
         <h1 id="name">Matheus Trindade</h1>
         <p class="role" id="role">Cientista de Dados · Desenvolvedor Full Stack</p>
 
-        <div class="actions">
-          <a id="cv-pt" class="btn" href="PT-Curriculo_MT.pdf" download>Currículo (PT)</a>
-          <a id="cv-en" class="btn btn-outline" href="EN-Curriculo_MT.pdf" download>Resume (EN)</a>
+        <div class="actions cv-actions"> 
+          <a id="cv-pt" class="btn" href="cv.html?lang=pt">CV Online (PT)</a> 
+          <a id="cv-en" class="btn btn-outline" href="cv.html?lang=en">Online CV (EN)</a>
           <a id="portfolio-btn" class="btn" href="https://github.com/clusterjedi" target="_blank" rel="noopener noreferrer">View Portfolio</a> 
+        </div>
+
+        <div class="pdf-links">
+          <a id="pdf-pt-link" href="PT-Curriculo_MT.pdf" download class="pdf-download-link link">(PDF)</a>
+          <a id="pdf-en-link" href="EN-Curriculo_MT.pdf" download class="pdf-download-link link">(PDF)</a>
         </div>
 
         <div class="meta">
@@ -171,6 +176,10 @@
       pt: {
         role: "Cientista de Dados · Desenvolvedor Full Stack",
         portfolio_btn: "Ver Portfólio", 
+        cv_online_btn_pt: "CV Online (PT)",
+        pdf_download_link_pt: "(PDF)", // <-- Texto PT atualizado
+        cv_online_btn_en: "CV Online (EN)", 
+        pdf_download_link_en: "(PDF)", // <-- Texto EN atualizado
         about_title: "Sobre",
         about_text: 'Sou <a href="formacao.html?lang=pt" target="_blank" rel="noopener noreferrer" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python), com foco em impacto social e aplicações práticas.',
         education_title: "Formação",
@@ -220,6 +229,10 @@
       en: {
         role: "Data Scientist · Full Stack Developer",
         portfolio_btn: "View Portfolio", 
+        cv_online_btn_pt: "Online CV (PT)", 
+        pdf_download_link_pt: "(PDF)", // <-- Texto PT atualizado
+        cv_online_btn_en: "Online CV (EN)",
+        pdf_download_link_en: "(PDF)", // <-- Texto EN atualizado
         about_title: "About",
         about_text: 'I hold a <a href="formacao.html?lang=en" target="_blank" rel="noopener noreferrer" class="inline-link">B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC)</a>. My background combines analytical rigor with the development of end-to-end tech solutions, from data modeling (Machine Learning, Statistics) to creating web/mobile apps (React, Node, Python), focused on social impact and practical solutions.',
         education_title: "Education",
@@ -276,24 +289,28 @@
       const elementsToUpdate = {
         'role': 'role',
         'portfolio-btn': 'portfolio_btn', 
+        'cv-pt': 'cv_online_btn_pt', 
+        'pdf-pt-link': 'pdf_download_link_pt', // Texto atualizado
+        'cv-en': 'cv_online_btn_en', 
+        'pdf-en-link': 'pdf_download_link_en', // Texto atualizado
         'about_title': 'about_title',
         'about_text': 'about_text', // innerHTML
         'education_title': 'education_title',
-        'education-linkedin-label': 'education_linkedin_label', // strong
-        'education-academic-links-label': 'education_academic_links_label', // strong
-        'education-academic-links-text': 'education_academic_links_text', // span
+        'education-linkedin-label': 'education_linkedin_label', 
+        'education-academic-links-label': 'education_academic_links_label', 
+        'education-academic-links-text': 'education_academic_links_text', 
         'skills_title': 'skills_title',
         'goals_title': 'goals_title',
         'projects_title': 'projects_title',
         'projects_text': 'projects_text', 
         'contact_title': 'contact_title',
-        'label-name': 'label_name', // label
-        'label-email': 'label_email', // label
-        'label-message': 'label_message', // label
-        'name-input': 'placeholder_name', // placeholder
-        'email-input': 'placeholder_email', // placeholder
-        'message-input': 'placeholder_message', // placeholder
-        'submit-btn': 'submit_btn' // button text
+        'label-name': 'label_name', 
+        'label-email': 'label_email', 
+        'label-message': 'label_message', 
+        'name-input': 'placeholder_name', 
+        'email-input': 'placeholder_email', 
+        'message-input': 'placeholder_message', 
+        'submit-btn': 'submit_btn' 
       };
 
       for (const [id, key] of Object.entries(elementsToUpdate)) {
@@ -310,36 +327,45 @@
              if (id === 'education-linkedin-label' || id === 'education-academic-links-label') {
                el.innerHTML = `<strong>${value}</strong>`;
              }
+             if (id === 'cv-pt') el.href = `cv.html?lang=pt`;
+             if (id === 'cv-en') el.href = `cv.html?lang=en`;
           }
         }
       }
 
       // Atualiza lista de Educação
       const education = document.getElementById('education_list');
-      education.innerHTML = '';
-      c.education_list.forEach(i => education.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+      if (education) {
+        education.innerHTML = '';
+        c.education_list.forEach(i => education.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+      }
 
       // Atualiza lista de Competências
       const skills = document.getElementById('skills_list');
-      skills.innerHTML = '';
-      c.skills_list.forEach(i => skills.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+       if (skills) {
+        skills.innerHTML = '';
+        c.skills_list.forEach(i => skills.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+       }
 
       // Atualiza lista de Metas
       const goals = document.getElementById('goals_list');
-      goals.innerHTML = '';
-      c.goals_list.forEach(i => goals.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+       if (goals) {
+        goals.innerHTML = '';
+        c.goals_list.forEach(i => goals.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+       }
 
       // Atualiza lista de Projetos
       const projectsList = document.getElementById('projects_list');
-      const projectLinks = projectsList.getElementsByTagName('a'); 
-      if (projectLinks.length === c.projects_list_items.length) {
-        for (let i = 0; i < projectLinks.length; i++) {
-          projectLinks[i].innerText = c.projects_list_items[i]; 
-          // Atualiza o href do link do Bellabeat
-          const bellabeatLinkId = `project-bellabeat-link-${lang}`;
-          if (projectLinks[i].id === 'project-bellabeat-link-pt' || projectLinks[i].id === 'project-bellabeat-link-en') { 
-             projectLinks[i].href = `projeto-bellabeat.html?lang=${lang}`;
-             projectLinks[i].id = bellabeatLinkId; 
+      if (projectsList) {
+        const projectLinks = projectsList.getElementsByTagName('a'); 
+        if (projectLinks.length === c.projects_list_items.length) {
+          for (let i = 0; i < projectLinks.length; i++) {
+            projectLinks[i].innerText = c.projects_list_items[i]; 
+            const bellabeatLinkId = `project-bellabeat-link-${lang}`;
+            if (projectLinks[i].id && (projectLinks[i].id.startsWith('project-bellabeat-link'))) { 
+              projectLinks[i].href = `projeto-bellabeat.html?lang=${lang}`;
+              projectLinks[i].id = bellabeatLinkId; 
+            }
           }
         }
       }
@@ -349,11 +375,17 @@
       document.getElementById('lang-en').classList.toggle('active', lang === 'en');
       document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
 
-      // Atualiza botões de CV
+      // Atualiza botões/links de CV (estilo outline)
       const cvPtBtn = document.getElementById('cv-pt');
       const cvEnBtn = document.getElementById('cv-en');
-      cvPtBtn.classList.toggle('btn-outline', lang !== 'pt');
-      cvEnBtn.classList.toggle('btn-outline', lang !== 'en');
+      if(cvPtBtn) cvPtBtn.classList.toggle('btn-outline', lang !== 'pt');
+      if(cvEnBtn) cvEnBtn.classList.toggle('btn-outline', lang !== 'en');
+      
+      // *** Mostra/Esconde links PDF baseado no idioma ***
+      const pdfPtLink = document.getElementById('pdf-pt-link');
+      const pdfEnLink = document.getElementById('pdf-en-link');
+      if(pdfPtLink) pdfPtLink.style.display = (lang === 'pt') ? 'inline' : 'none';
+      if(pdfEnLink) pdfEnLink.style.display = (lang === 'en') ? 'inline' : 'none';
     }
 
     // Inicializa o texto com o idioma inglês

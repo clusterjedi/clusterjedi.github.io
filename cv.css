@@ -1,0 +1,189 @@
+/* --- Estilos para a página CV --- */
+
+/* Ajustes no Cabeçalho */
+.cv-header {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.cv-header h1 {
+  font-size: 2.2em;
+  margin-bottom: 5px;
+}
+.cv-subtitle {
+  font-size: 1.2em;
+  color: var(--muted);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.cv-contact {
+  font-size: 0.95em;
+  color: var(--muted);
+  margin-bottom: 15px;
+  display: flex; /* Para centralizar e espaçar */
+  justify-content: center;
+  flex-wrap: wrap; /* Quebra linha se necessário */
+  gap: 5px 10px; /* Espaçamento vertical e horizontal */
+}
+.cv-contact span { /* Texto não-link */
+  margin: 0 5px;
+}
+.cv-contact a.link { /* Links de contato */
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight: 500;
+}
+.cv-contact a.link:hover {
+  text-decoration: underline;
+}
+
+.download-pdf-btn {
+  margin-top: 10px;
+  padding: 6px 10px; /* Botão menor */
+  font-size: 0.9em;
+}
+
+
+/* Container principal do CV */
+.cv-container {
+  background: var(--card); /* Fundo branco */
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(20,30,40,0.04);
+}
+
+/* Seções do CV */
+.cv-section {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eef2f7; /* Linha divisória sutil */
+}
+.cv-section:last-child {
+  border-bottom: none; /* Remove a linha da última seção */
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.cv-section h2 {
+  font-size: 1.5em; /* Tamanho do título da seção */
+  color: var(--accent-2); /* Cor de destaque */
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent); /* Linha abaixo do título */
+  text-align: left; /* Garante alinhamento */
+}
+
+.cv-section p {
+  line-height: 1.6;
+  color: #334; /* Cor de texto um pouco mais escura */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Experiência Profissional */
+.job {
+  margin-bottom: 16px;
+}
+.job h3 {
+  font-size: 1.15em;
+  margin: 0 0 2px 0;
+  color: #223;
+}
+.job-title-location {
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 2px 0;
+  font-size: 1em;
+}
+.job-dates {
+  font-size: 0.9em;
+  color: #778;
+  margin: 0 0 8px 0;
+}
+.job ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+  color: #445;
+}
+.job ul li {
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+/* Formação Acadêmica & Certificações */
+.education-item {
+  margin-bottom: 10px;
+}
+.education-item h3 {
+  font-size: 1.1em;
+  margin: 0 0 2px 0;
+  color: #223;
+}
+.education-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Habilidades Técnicas */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid responsivo */
+  gap: 16px 24px; /* Espaçamento entre colunas e linhas */
+}
+.skills-grid h3 {
+  font-size: 1.05em;
+  margin: 0 0 8px 0;
+  color: #334;
+  border-bottom: 1px solid #eef2f7;
+  padding-bottom: 4px;
+}
+.skills-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.skills-grid ul li {
+  margin-bottom: 5px;
+  font-size: 0.95em;
+  color: #445;
+  position: relative;
+  padding-left: 16px; /* Espaço para o marcador */
+}
+/* Marcador customizado para habilidades */
+.skills-grid ul li::before {
+  content: '›'; /* Ou '•', '-', etc. */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Idiomas */
+.cv-section p strong {
+  color: #334;
+  min-width: 80px; /* Alinha os pontos */
+  display: inline-block;
+}
+
+/* Responsividade Geral */
+@media (max-width: 600px) {
+  .cv-header h1 {
+    font-size: 1.8em;
+  }
+  .cv-subtitle {
+    font-size: 1.1em;
+  }
+  .cv-contact {
+    font-size: 0.9em;
+  }
+  .cv-section h2 {
+    font-size: 1.3em;
+  }
+  .skills-grid {
+    /* Força uma coluna em telas muito pequenas */
+    grid-template-columns: 1fr;
+  }
+}

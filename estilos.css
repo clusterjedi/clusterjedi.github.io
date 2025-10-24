@@ -29,9 +29,25 @@ body{
 .role{margin:6px 0;color:var(--muted)}
 
 /* actions */
-.actions{margin-top:8px;display:flex;gap:10px}
+.actions{margin-top:8px;display:flex;flex-wrap:wrap;gap:10px} /* Adicionado flex-wrap */
 .btn{display:inline-block;padding:8px 12px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:600}
 .btn-outline{background:#fff;border:1px solid var(--accent);color:var(--accent)}
+
+/* --- NOVO: Estilos para links PDF --- */
+.pdf-links {
+  margin-top: 6px; /* Espaço acima dos links PDF */
+  margin-bottom: 8px; /* Espaço abaixo dos links PDF, antes do .meta */
+  display: flex;
+  gap: 10px; /* Espaço entre os links PT e EN */
+  align-items: center;
+}
+.pdf-links a {
+  font-size: 0.85em; /* Fonte menor */
+  color: var(--muted); /* Cor cinza */
+}
+
+/* meta links (email, github, etc) */
+.meta{margin-top:10px;font-size:0.9rem}
 
 /* nav (lang) */
 .top-nav{display:flex;gap:6px}
@@ -45,7 +61,12 @@ main{margin-top:18px}
 
 /* chips skills */
 .chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin:0}
-.chips li{background:#eef7ff;padding:6px 10px;border-radius:999px;border:1px solid #d6ecff;font-size:0.9rem}
+.chips li{background:#eef7ff;padding:6px 10px;border-radius:999px;font-size:0.9rem;font-weight:500;color:var(--accent-2)}
+
+/* lists (educação e metas) */
+.list{list-style:none;padding:0;margin:0}
+.list li{margin-bottom:6px;position:relative;padding-left:16px}
+.list li::before{content:'•';position:absolute;left:0;color:var(--accent)}
 
 /* footer */
 .site-footer{margin-top:10px;padding:16px 0;background:transparent}
@@ -57,6 +78,8 @@ main{margin-top:18px}
   .hero{flex-direction:column;align-items:center;text-align:center}
   .meta{display:block}
   .hero-text{max-width:70%}
+  /* --- NOVO: Ajusta PDF links em telas menores --- */
+  .pdf-links { justify-content: center; } /* Centraliza os links PDF */
 }
 
 /* small helpers */
@@ -68,7 +91,6 @@ a.link:hover{text-decoration:underline}
   color: var(--accent-2);
   font-weight: 600;
   text-decoration: none;
-  /* Adiciona um sublinhado sutil para indicar o link */
   border-bottom: 2px solid rgba(41, 128, 185, 0.2);
   transition: all 0.2s ease;
 }
@@ -80,14 +102,14 @@ a.link:hover{text-decoration:underline}
 /* --- Rodapé (Footer) --- */
 .site-footer {
   display: flex;
-  flex-wrap: wrap; /* Permite quebrar a linha em telas pequenas */
-  justify-content: space-between; /* Alinha os itens (span e nav) nas pontas */
+  flex-wrap: wrap; 
+  justify-content: space-between; 
   align-items: center;
-  gap: 10px; /* Espaço entre os itens se quebrar a linha */
+  gap: 10px; 
   
   margin-top: 24px;
   padding-top: 18px;
-  border-top: 1px solid #e0e6ec; /* Usei uma cor padrão do seu layout */
+  border-top: 1px solid #e0e6ec; 
   color: var(--muted, #556);
   font-size: 0.9rem;
 }
@@ -95,7 +117,7 @@ a.link:hover{text-decoration:underline}
 .site-footer nav {
   display: flex;
   align-items: center;
-  gap: 6px; /* Espaço entre os links */
+  gap: 6px; 
 }
 
 .site-footer nav a {
@@ -124,11 +146,11 @@ a.link:hover{text-decoration:underline}
 .contact-form textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #dbe6f0; /* Cor de borda sutil */
+  border: 1px solid #dbe6f0; 
   border-radius: 6px;
   font-size: 1em;
-  font-family: inherit; /* Usa a mesma fonte do body */
-  background-color: #fcfdfe; /* Fundo ligeiramente diferente */
+  font-family: inherit; 
+  background-color: #fcfdfe; 
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -136,18 +158,32 @@ a.link:hover{text-decoration:underline}
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--accent); /* Cor de destaque ao focar */
-  box-shadow: 0 0 0 2px rgba(44, 152, 217, 0.2); /* Sombra suave de foco */
+  border-color: var(--accent); 
+  box-shadow: 0 0 0 2px rgba(44, 152, 217, 0.2); 
 }
 
 .contact-form textarea {
-  resize: vertical; /* Permite redimensionar apenas verticalmente */
+  resize: vertical; 
   min-height: 80px;
 }
 
-/* O botão já pega o estilo .btn da sua folha de estilos */
 .contact-form button[type="submit"] {
   cursor: pointer;
-  /* Adiciona um pouco de margem se necessário */
-  /* margin-top: 10px; */ 
+}
+
+/* --- Estilos para links adicionais na seção Educação --- */
+.section-divider {
+  border: none; 
+  height: 1px; 
+  background-color: #e0e6ec; 
+  margin: 20px 0 15px 0; 
+}
+
+.additional-links {
+  font-size: 0.9em; 
+  color: var(--muted); 
+}
+
+.additional-links p {
+  margin-bottom: 5px; 
 }
