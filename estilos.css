@@ -8,7 +8,7 @@
   --radius: 10px;
   --maxw: 1100px;
   font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-  scroll-behavior: smooth; /* *** ROLAGEM SUAVE ADICIONADA *** */
+  scroll-behavior: smooth;
 }
 
 *{box-sizing:border-box}
@@ -31,18 +31,17 @@ body{
 
 /* actions */
 .actions{margin-top:8px;display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-block;padding:8px 12px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:600; transition: background-color 0.2s ease, transform 0.2s ease; /* Transição base */}
-.btn-outline{background:#fff;border:1px solid var(--accent);color:var(--accent); transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Transição base */}
+.btn{display:inline-block;padding:8px 12px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:600; transition: background-color 0.2s ease, transform 0.2s ease;}
+.btn-outline{background:#fff;border:1px solid var(--accent);color:var(--accent); transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;}
 
-/* *** MICRO-INTERAÇÃO HOVER ADICIONADA *** */
 .btn:hover {
-  background-color: var(--accent-2); /* Escurece um pouco no hover */
-  transform: translateY(-2px); /* Eleva ligeiramente */
+  background-color: var(--accent-2);
+  transform: translateY(-2px);
 }
 .btn-outline:hover {
-  background-color: rgba(44, 152, 217, 0.05); /* Fundo leve no hover */
-  transform: translateY(-2px); /* Eleva ligeiramente */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra suave */
+  background-color: rgba(44, 152, 217, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 /* --- Estilos para links PDF --- */
@@ -81,16 +80,32 @@ main{margin-top:18px}
 .list li::before{content:'•';position:absolute;left:0;color:var(--accent)}
 
 /* footer */
-.site-footer{margin-top:10px;padding:16px 0;background:transparent}
 /* Regras do .site-footer movidas para o final para garantir a ordem */
 
 /* responsive */
 @media (max-width:800px){
   .grid{grid-template-columns:1fr}
-  .hero{flex-direction:column;align-items:center;text-align:center}
-  .meta{display:flex; justify-content:center;} /* Centraliza meta links */
-  .hero-text{max-width:90%} /* Aumenta um pouco a largura */
-  .pdf-links { justify-content: center; } /* Centraliza os links PDF */
+  .hero{
+    flex-direction:column;
+    align-items:center;
+    /* text-align: center; <-- REMOVIDO */
+  }
+  .meta{
+    display:flex; /* Usa flex para centralizar */
+    justify-content:center;
+    gap: 10px; /* Adiciona espaço entre os links meta */
+  }
+  .hero-text{
+    max-width: 90%; /* <-- ALTERADO de 70% para 90% */
+    text-align: center; /* Centraliza o texto dentro do hero-text */
+  }
+  /* *** NOVAS REGRAS PARA CENTRALIZAR BOTÕES/LINKS PDF *** */
+  .actions {
+    justify-content: center;
+  }
+  .pdf-links {
+    justify-content: center;
+  }
 }
 
 /* small helpers */
@@ -158,7 +173,6 @@ a.link:hover{text-decoration:underline}
   background-color: #fcfdfe;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-/* Estilo específico para o campo honeypot (não essencial, mas garante ocultação) */
 input[name="_gotcha"] {
   position: absolute;
   left: -5000px;
@@ -167,7 +181,7 @@ input[name="_gotcha"] {
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
-  /* Estilos de foco já cobertos pela regra global de acessibilidade */
+  /* Estilos de foco cobertos pela regra global */
 }
 .contact-form textarea {
   resize: vertical;
@@ -199,21 +213,19 @@ input[name="_gotcha"] {
   border-radius: 6px;
   font-size: 0.9em;
   font-weight: 500;
-  opacity: 0; /* Começa invisível para fade-in */
-  transition: opacity 0.3s ease-in-out; /* Transição de opacidade */
-  display: none; /* Mantém display none inicial */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: none;
 }
-/* Animação Keyframes para Fade In */
 @keyframes fadeInStatus {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-/* Aplica display block e animação quando a classe é adicionada */
 .form-status.sending,
 .form-status.success,
 .form-status.error {
   display: block;
-  animation: fadeInStatus 0.3s forwards; /* Aplica o fade-in */
+  animation: fadeInStatus 0.3s forwards;
 }
 .form-status.sending {
   background-color: #eef7ff;
