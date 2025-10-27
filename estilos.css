@@ -1,4 +1,4 @@
-/* --- base e container (mantive alguns valores do seu estilos.css) --- */
+/* --- base e container --- */
 :root{
   --bg: #f6f8fb;
   --card: #ffffff;
@@ -23,9 +23,16 @@ body{
 .container{max-width:var(--maxw);margin:24px auto;padding:20px}
 
 /* header */
-.site-header{display:flex;align-items:center;justify-content:space-between;padding:10px 20px}
+.site-header{
+  display:flex;
+  align-items:center; /* Alinha verticalmente por padrão */
+  justify-content:space-between; /* Espaça hero e nav */
+  padding:10px 20px;
+  flex-wrap: wrap; /* Permite quebrar se necessário */
+  gap: 15px; /* Espaço caso quebre linha */
+}
 .hero{display:flex;gap:18px;align-items:center}
-.foto-perfil{width:120px;height:120px;border-radius:999px;object-fit:cover;border:3px solid var(--accent)}
+.foto-perfil{width:120px;height:120px;border-radius:999px;object-fit:cover;border:3px solid var(--accent); flex-shrink: 0;} /* Impede que a foto encolha */
 .hero-text h1{margin:0;font-size:1.6rem}
 .role{margin:6px 0;color:var(--muted)}
 
@@ -58,10 +65,10 @@ body{
 }
 
 /* meta links (github, kaggle) */
-.meta{margin-top:10px;font-size:0.9rem}
+.meta{margin-top:10px;font-size:0.9rem; display: flex; gap: 10px;} /* Usa flex para espaçar os links */
 
 /* nav (lang) */
-.top-nav{display:flex;gap:6px}
+.top-nav{display:flex;gap:6px; margin-left: auto;} /* Empurra para a direita por padrão */
 .lang-btn{background:transparent;border:1px solid #dbe6f0;padding:6px 8px;border-radius:6px;cursor:pointer}
 .lang-btn.active{background:var(--accent-2);color:white;border-color:var(--accent-2)}
 
@@ -85,27 +92,38 @@ main{margin-top:18px}
 /* responsive */
 @media (max-width:800px){
   .grid{grid-template-columns:1fr}
-  .hero{
-    flex-direction:column;
-    align-items:center;
-    /* text-align: center; <-- REMOVIDO */
+
+  /* *** AJUSTES AQUI PARA O CABEÇALHO MOBILE *** */
+  .site-header {
+    flex-direction: column; /* Empilha hero e nav */
+    align-items: center; /* Centraliza os itens empilhados */
+    gap: 20px; /* Espaço entre hero e nav */
+    padding: 20px 10px; /* Ajusta padding */
   }
-  .meta{
-    display:flex; /* Usa flex para centralizar */
-    justify-content:center;
-    gap: 10px; /* Adiciona espaço entre os links meta */
+  .hero{
+    flex-direction:column; /* Empilha foto e texto */
+    align-items:center;
+    width: 100%; /* Garante que o hero ocupe a largura */
   }
   .hero-text{
-    max-width: 90%; /* <-- ALTERADO de 70% para 90% */
-    text-align: center; /* Centraliza o texto dentro do hero-text */
+    /* max-width: 90%; <-- REMOVIDO */
+    width: 100%; /* Ocupa a largura disponível */
+    text-align: center; /* Centraliza o texto e elementos inline/inline-block */
   }
-  /* *** NOVAS REGRAS PARA CENTRALIZAR BOTÕES/LINKS PDF *** */
   .actions {
-    justify-content: center;
+    justify-content: center; /* Centraliza os botões */
   }
   .pdf-links {
-    justify-content: center;
+    justify-content: center; /* Centraliza os links PDF */
   }
+   .meta{
+    justify-content:center; /* Centraliza os links meta (GitHub/Kaggle) */
+  }
+  .top-nav {
+     margin-left: 0; /* Remove margem que empurrava pra direita */
+     /* margin-top: 15px; <-- Ajustado pelo gap do site-header */
+  }
+  /* *** FIM DOS AJUSTES DO CABEÇALHO MOBILE *** */
 }
 
 /* small helpers */
@@ -133,7 +151,7 @@ a.link:hover{text-decoration:underline}
   align-items: center;
   gap: 10px;
   margin-top: 24px;
-  padding-top: 18px;
+  padding: 18px 20px; /* Adiciona padding horizontal */
   border-top: 1px solid #e0e6ec;
   color: var(--muted, #556);
   font-size: 0.9rem;
@@ -142,6 +160,8 @@ a.link:hover{text-decoration:underline}
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-wrap: wrap; /* Permite quebrar links do footer */
+  justify-content: center; /* Centraliza se quebrar */
 }
 .site-footer nav a {
   color: var(--muted, #556);
