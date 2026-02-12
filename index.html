@@ -7,16 +7,6 @@
   <link rel="stylesheet" href="estilos.css">
   <meta name="description" content="Matheus Trindade — Data Scientist & Full-Stack Developer. Portfolio, CV, and projects in Data Science, Machine Learning (ML), and web applications.">
 
-  <meta property="og:title" content="Matheus Trindade — Data Scientist & Full-Stack" />
-  <meta property="og:description" content="Portfolio, CV, and projects in Data Science, Machine Learning (ML), and web applications." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://clusterjedi.github.io/" />
-  <meta property="og:image" content="https://clusterjedi.github.io/img1.png" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Matheus Trindade — Data Scientist & Full-Stack" />
-  <meta name="twitter:description" content="Portfolio, CV, and projects in Data Science, Machine Learning (ML), and web applications." />
-  <meta name="twitter:image" content="https://clusterjedi.github.io/img1.png" />
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,9 +24,9 @@
 </head>
 <body>
 
-  <a href="#main-content" class="skip-link" id="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
 
-  <header class="site-header container" role="banner">
+  <header class="site-header container">
     <div class="hero">
 
       <picture>
@@ -55,8 +45,8 @@
         </div>
 
         <div class="pdf-links">
-          <a id="pdf-pt-link" href="PT-Curriculo_MT.pdf" download class="pdf-download-link link" aria-label="Baixar CV em Português (PDF)">PT (PDF)</a>
-          <a id="pdf-en-link" href="EN-Curriculo_MT.pdf" download class="pdf-download-link link" aria-label="Download CV in English (PDF)">EN (PDF)</a>
+          <a id="pdf-pt-link" href="PT-Curriculo_MT.pdf" download class="pdf-download-link link">(PDF)</a>
+          <a id="pdf-en-link" href="EN-Curriculo_MT.pdf" download class="pdf-download-link link">(PDF)</a>
         </div>
 
         <div class="meta">
@@ -67,13 +57,13 @@
       </div>
     </div>
 
-    <nav class="top-nav" aria-label="Language selection" id="lang-nav-label">
-      <button id="lang-pt" class="lang-btn" onclick="updateText('pt')" aria-pressed="false">PT</button>
-      <button id="lang-en" class="lang-btn active" onclick="updateText('en')" aria-pressed="true">EN</button>
+    <nav class="top-nav">
+      <button id="lang-pt" class="lang-btn" onclick="updateText('pt')">PT</button>
+      <button id="lang-en" class="lang-btn active" onclick="updateText('en')">EN</button>
     </nav>
   </header>
 
-  <main class="container" role="main" id="main-content">
+  <main class="container">
 
     <section class="card">
       <h2 id="about_title">Sobre</h2>
@@ -87,15 +77,13 @@
         <h2 id="contact_title">Contato</h2>
 
         <form id="contact-form" class="contact-form">
-          <input type="text" name="_gotcha" style="display:none !important">
-
           <div class="form-group">
             <label for="name-input" id="label-name">Nome</label>
             <input type="text" id="name-input" name="name" required placeholder="Seu Nome">
           </div>
           <div class="form-group">
             <label for="email-input" id="label-email">Email</label>
-            <input type="email" id="email-input" name="email" required placeholder="seu@email.com">
+            <input type="email" id="email-input" name="_replyto" required placeholder="seu@email.com">
           </div>
           <div class="form-group">
             <label for="message-input" id="label-message">Mensagem</label>
@@ -111,11 +99,12 @@
       <section class="card">
         <h2 id="education_title">Formação</h2>
         <ul class="list" id="education_list">
-            <li>Tecnologia da Informação (UFMS) — em andamento</li>
+            <li>Ciências Econômicas (Uninter) — em andamento</li>
+	    <li>Ciência de Dados (UFMS) — em andamento</li>
             <li>Certificado Google Data Analytics — Google/Coursera (2025)</li>
             <li>Pós-graduação em Desenvolvimento Full Stack — PUC (2025)</li>
             <li>MBA em Data Science & Analytics — USP (2024)</li>
-            <li>Bacharelado em Matemática — UNESP (2019)</li>
+            <li>Bacharelado em Matemática — Unesp (2019)</li>
             <li>Técnico em Informática (ETEC, 2003)</li>
         </ul>
 
@@ -159,8 +148,8 @@
       <section class="card">
         <h2 id="goals_title">Metas Profissionais e Interesses</h2>
         <ol id="goals_list">
-          <li>Concluir a graduação em Tecnologia da Informação (UFMS).</li>
-          <li>Cursar a graduação em Ciências Econômicas.</li>
+          <li>Concluir a graduação em Ciências Econômicas.</li>
+          <li>Cursar a graduação em Ciências de Dados.</li>
           <li>Unir as competências de Desenvolvimento Full Stack, Ciência de Dados e Economia.</li>
           <li>Aplicar este conhecimento integrado no desenvolvimento de projetos de alto impacto social.</li>
           <li>Atuar em projetos freelance ou remotos de nível global.</li>
@@ -173,70 +162,144 @@
   <footer class="site-footer container">
     <span>© 2025 Matheus Trindade</span>
     <nav>
-      <a href="http://lattes.cnpq.br/4881948734940849" class="link" target="_blank" rel="noopener noreferrer" aria-label="Abrir Currículo Lattes (abre em nova aba)">Lattes</a>
+      <a href="http://lattes.cnpq.br/4881948734940849" class="link" target="_blank" rel="noopener noreferrer">Lattes</a>
       ·
-      <a href="https://orcid.org/0009-0002-9301-0656" class="link" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil ORCID (abre em nova aba)">ORCID</a>
+      <a href="https://orcid.org/0009-0002-9301-0656" class="link" target="_blank" rel="noopener noreferrer">ORCID</a>
       ·
-      <a href="https://unesp.academia.edu/MatheusTrindade" class="link" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil Academia.edu (abre em nova aba)">Academia.edu</a>
+      <a href="https://unesp.academia.edu/MatheusTrindade" class="link" target="_blank" rel="noopener noreferrer">Academia.edu</a>
       ·
-      <a href="https://medium.com/@trindadde" class="link" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil Medium (abre em nova aba)">Medium</a>
+      <a href="https://medium.com/@trindadde" class="link" target="_blank" rel="noopener noreferrer">Medium</a>
     </nav>
   </footer>
 
 
   <script>
-    // Objeto de conteúdo bilíngue (sem alterações)
+    // Objeto de conteúdo bilíngue
     const content = {
       pt: {
-        skip_link_text: "Pular para conteúdo principal", lang_nav_label: "Seleção de idioma",
-        role: "Cientista de Dados · Desenvolvedor Full Stack", portfolio_btn: "Ver Portfólio",
-        cv_online_btn_pt: "CV Online (PT)", pdf_download_link_pt: "PT (PDF)", pdf_download_aria_label_pt: "Baixar CV em Português (PDF)",
-        cv_online_btn_en: "CV Online (EN)", pdf_download_link_en: "EN (PDF)", pdf_download_aria_label_en: "Baixar CV em Inglês (PDF)",
+        role: "Cientista de Dados · Desenvolvedor Full Stack",
+        portfolio_btn: "Ver Portfólio",
+        cv_online_btn_pt: "CV Online (PT)",
+        pdf_download_link_pt: "(PDF)",
+        cv_online_btn_en: "CV Online (EN)",
+        pdf_download_link_en: "(PDF)",
         about_title: "Sobre",
+        // *** target="_blank" REMOVIDO DAQUI ***
         about_text: 'Sou <a href="formacao.html?lang=pt" rel="noopener noreferrer" class="inline-link">bacharel em Matemática (UNESP) com especializações em Data Science (USP) e Full Stack (PUC)</a>. Minha trajetória combina o rigor analítico com o desenvolvimento de soluções tecnológicas ponta-a-ponta, desde a modelagem de dados (Machine Learning, Estatística) até a criação de aplicações web/mobile (React, Node, Python), com foco em impacto social e aplicações práticas.',
         education_title: "Formação",
-        education_list: ["Tecnologia da Informação (UFMS) — em andamento","Certificado Google Data Analytics — Google/Coursera (2025)","Pós-graduação em Desenvolvimento Full Stack — PUC (2025)","MBA em Data Science & Analytics — USP (2024)","Bacharelado em Matemática — UNESP (2019)","Técnico em Informática (ETEC, 2003)"],
-        education_linkedin_label: "LinkedIn:", education_academic_links_label: "Links acadêmicos:", education_academic_links_text: "(rodapé)",
+        education_list: [
+	    "Ciências Econômicas (Uninter) — em andamento",
+            "Ciência de Dados (UFMS) — em andamento",
+            "Certificado Google Data Analytics — Google/Coursera (2025)",
+            "Pós-graduação em Desenvolvimento Full Stack — PUC (2025)",
+            "MBA em Data Science & Analytics — USP (2024)",
+            "Bacharelado em Matemática — Unesp (2019)",
+            "Técnico em Informática (ETEC, 2003)"
+        ],
+        education_linkedin_label: "LinkedIn:",
+        education_academic_links_label: "Links acadêmicos:",
+        education_academic_links_text: "(rodapé)",
         skills_title: "Competências",
-        skills_list: ['Análise de Dados', 'Machine Learning', 'Deep Learning (TensorFlow)', 'Python (Pandas, Scikit-learn)', 'R','Visualização de Dados', 'Power BI / Tableau', 'Dashboards', 'Ggplot2', 'Rmarkdown', 'Storytelling de dados','SQL (PostgreSQL, MySQL)', 'NoSQL (MongoDB)', 'Limpeza de Dados', 'Validação de Dados', 'Estatística', 'Big Data (Spark)','React / Next.js', 'Node.js', 'Django / Flask', 'APIs REST / GraphQL', 'Flutter','Docker / Kubernetes', 'CI/CD', 'Ética de Dados'],
+        skills_list: [
+          'Análise de Dados', 'Machine Learning', 'Deep Learning (TensorFlow)', 'Python (Pandas, Scikit-learn)', 'R',
+          'Visualização de Dados', 'Power BI / Tableau', 'Dashboards', 'Ggplot2', 'Rmarkdown', 'Storytelling de dados',
+          'SQL (PostgreSQL, MySQL)', 'NoSQL (MongoDB)', 'Limpeza de Dados', 'Validação de Dados', 'Estatística', 'Big Data (Spark)',
+          'React / Next.js', 'Node.js', 'Django / Flask', 'APIs REST / GraphQL', 'Flutter',
+          'Docker / Kubernetes', 'CI/CD', 'Ética de Dados'
+        ],
         goals_title: "Metas Profissionais e Interesses",
-        goals_list: ['Concluir a graduação em Tecnologia da Informação (UFMS).','Cursar a graduação em Ciências Econômicas.','Unir as competências de Desenvolvimento Full Stack, Ciência de Dados e Economia.','Aplicar este conhecimento integrado no desenvolvimento de projetos de alto impacto social.','Atuar em projetos freelance ou remotos de nível global.'],
-        projects_title: "Projetos selecionados", projects_text: "Meu portfólio prático está em constante desenvolvimento. Você pode encontrar implementações de modelos de ML, notebooks de análise exploratória e projetos de desenvolvimento web completos nos links abaixo.",
-        projects_list_items: ['Estudo de Caso: Análise de Dados Bellabeat (Google Capstone)','GitHub — mais projetos de Data Science e Full-Stack','Kaggle — kernels e notebooks'],
-        contact_title: "Contato", label_name: "Nome", label_email: "Email", label_message: "Mensagem",
-        placeholder_name: "Seu Nome", placeholder_email: "seu@email.com", placeholder_message: "Sua Mensagem...", submit_btn: "Enviar",
-        form_success_msg: "Obrigado! Sua mensagem foi enviada.", form_error_msg: "Oops! Houve um problema ao enviar sua mensagem."
+        goals_list: [
+          'Concluir a graduação em Ciências Econômicas (Uninter).',
+	  'Concluir a graduação em Ciência de Dados (UFMS).',
+          'Unir as competências de Desenvolvimento Full Stack, Ciência de Dados e Economia.',
+          'Aplicar este conhecimento integrado no desenvolvimento de projetos de alto impacto social.',
+          'Atuar em projetos freelance ou remotos de nível global.'
+        ],
+        projects_title: "Projetos selecionados",
+        projects_text: "Meu portfólio prático está em constante desenvolvimento. Você pode encontrar implementações de modelos de ML, notebooks de análise exploratória e projetos de desenvolvimento web completos nos links abaixo.",
+        projects_list_items: [
+          'Estudo de Caso: Análise de Dados Bellabeat (Google Capstone)',
+          'GitHub — mais projetos de Data Science e Full-Stack',
+          'Kaggle — kernels e notebooks'
+        ],
+        contact_title: "Contato",
+        label_name: "Nome",
+        label_email: "Email",
+        label_message: "Mensagem",
+        placeholder_name: "Seu Nome",
+        placeholder_email: "seu@email.com",
+        placeholder_message: "Sua Mensagem...",
+        submit_btn: "Enviar",
+        form_success_msg: "Obrigado! Sua mensagem foi enviada.",
+        form_error_msg: "Oops! Houve um problema ao enviar sua mensagem."
       },
       en: {
-        skip_link_text: "Skip to main content", lang_nav_label: "Language selection",
-        role: "Data Scientist · Full Stack Developer", portfolio_btn: "View Portfolio",
-        cv_online_btn_pt: "Online CV (PT)", pdf_download_link_pt: "PT (PDF)", pdf_download_aria_label_pt: "Download CV in Portuguese (PDF)",
-        cv_online_btn_en: "Online CV (EN)", pdf_download_link_en: "EN (PDF)", pdf_download_aria_label_en: "Download CV in English (PDF)",
+        role: "Data Scientist · Full Stack Developer",
+        portfolio_btn: "View Portfolio",
+        cv_online_btn_pt: "Online CV (PT)",
+        pdf_download_link_pt: "(PDF)",
+        cv_online_btn_en: "Online CV (EN)",
+        pdf_download_link_en: "(PDF)",
         about_title: "About",
+        // *** target="_blank" REMOVIDO DAQUI ***
         about_text: 'I hold a <a href="formacao.html?lang=en" rel="noopener noreferrer" class="inline-link">B.Sc. in Mathematics (UNESP) and specializations in Data Science (USP) and Full Stack Development (PUC)</a>. My background combines analytical rigor with the development of end-to-end tech solutions, from data modeling (Machine Learning, Statistics) to creating web/mobile apps (React, Node, Python), focused on social impact and practical solutions.',
         education_title: "Education",
-        education_list: ["B.Tech in Information Technology (UFMS) — in progress","Google Data Analytics Certificate — Google/Coursera (2025)","Postgrad in Full Stack Development — PUC (2025)","MBA in Data Science & Analytics — USP (2024)","B.Sc. in Mathematics — UNESP (2019)","Technical Degree in Informatics (ETEC, 2003)"],
-        education_linkedin_label: "LinkedIn:", education_academic_links_label: "Academic links:", education_academic_links_text: "(footer)",
+        education_list: [
+	    "B.Sc. in Economics (Uninter) — in progress",
+            "B.Tech in Data Science (UFMS) — in progress",
+            "Google Data Analytics Certificate — Google/Coursera (2025)",
+            "Postgrad in Full Stack Development — PUC (2025)",
+            "MBA in Data Science & Analytics — USP (2024)",
+            "B.Sc. in Mathematics — Unesp (2019)",
+            "Technical Degree in Informatics (ETEC, 2003)"
+        ],
+        education_linkedin_label: "LinkedIn:",
+        education_academic_links_label: "Academic links:",
+        education_academic_links_text: "(footer)",
         skills_title: "Skills",
-        skills_list: ['Data Analysis', 'Machine Learning', 'Deep Learning (TensorFlow)', 'Python (Pandas, Scikit-learn)', 'R','Data Visualization', 'Power BI / Tableau', 'Dashboards', 'Ggplot2', 'Rmarkdown', 'Data Storytelling','SQL (PostgreSQL, MySQL)', 'NoSQL (MongoDB)', 'Data Cleaning', 'Data Validation', 'Statistics', 'Big Data (Spark)','React / Next.js', 'Node.js', 'Django / Flask', 'REST / GraphQL APIs', 'Flutter','Docker / Kubernetes', 'CI/CD', 'Data Ethics'],
+        skills_list: [
+          'Data Analysis', 'Machine Learning', 'Deep Learning (TensorFlow)', 'Python (Pandas, Scikit-learn)', 'R',
+          'Data Visualization', 'Power BI / Tableau', 'Dashboards', 'Ggplot2', 'Rmarkdown', 'Data Storytelling',
+          'SQL (PostgreSQL, MySQL)', 'NoSQL (MongoDB)', 'Data Cleaning', 'Data Validation', 'Statistics', 'Big Data (Spark)',
+          'React / Next.js', 'Node.js', 'Django / Flask', 'REST / GraphQL APIs', 'Flutter',
+          'Docker / Kubernetes', 'CI/CD', 'Data Ethics'
+        ],
         goals_title: "Professional Goals and Interests",
-        goals_list: ['Complete the B.Tech in Information Technology (UFMS).','Pursue a B.Sc. in Economics.','Combine Full Stack Development, Data Science, and Economics competencies.','Apply this integrated knowledge to develop high social impact projects.','Engage in global-level freelance or remote projects.'],
-        projects_title: "Selected Projects", projects_text: "My practical portfolio is constantly evolving. You can find ML model implementations, exploratory analysis notebooks, and complete web development projects in the links below.",
-        projects_list_items: ['Case Study: Bellabeat Data Analysis (Google Capstone)','GitHub — more Data Science & Full-Stack projects','Kaggle — kernels & notebooks'],
-        contact_title: "Contact", label_name: "Name", label_email: "Email", label_message: "Message",
-        placeholder_name: "Your Name", placeholder_email: "your@email.com", placeholder_message: "Your Message...", submit_btn: "Send",
-        form_success_msg: "Thanks! Your message has been sent.", form_error_msg: "Oops! There was a problem submitting your form."
+        goals_list: [
+	  'Complete the B.Sc. in Economics.',
+          'Complete the B.Tech in Data Science.',
+          'Combine Full Stack Development, Data Science, and Economics competencies.',
+          'Apply this integrated knowledge to develop high social impact projects.',
+          'Engage in global-level freelance or remote projects.'
+        ],
+        projects_title: "Selected Projects",
+        projects_text: "My practical portfolio is constantly evolving. You can find ML model implementations, exploratory analysis notebooks, and complete web development projects in the links below.",
+        projects_list_items: [
+          'Case Study: Bellabeat Data Analysis (Google Capstone)',
+          'GitHub — more Data Science & Full-Stack projects',
+          'Kaggle — kernels & notebooks'
+        ],
+        contact_title: "Contact",
+        label_name: "Name",
+        label_email: "Email",
+        label_message: "Message",
+        placeholder_name: "Your Name",
+        placeholder_email: "your@email.com",
+        placeholder_message: "Your Message...",
+        submit_btn: "Send",
+        form_success_msg: "Thanks! Your message has been sent.",
+        form_error_msg: "Oops! There was a problem submitting your form."
       }
     };
 
-    // Função para atualizar o texto (sem alterações lógicas)
+    // Função para atualizar o texto (mantida igual)
     function updateText(lang) {
       const c = content[lang];
+
       const elementsToUpdate = {
-        'skip-link': 'skip_link_text', 'lang-nav-label': 'lang_nav_label',
         'role': 'role', 'portfolio-btn': 'portfolio_btn',
-        'cv-pt': 'cv_online_btn_pt', 'pdf-pt-link': ['pdf_download_link_pt', 'pdf_download_aria_label_pt'],
-        'cv-en': 'cv_online_btn_en', 'pdf-en-link': ['pdf_download_link_en', 'pdf_download_aria_label_en'],
+        'cv-pt': 'cv_online_btn_pt', 'pdf-pt-link': 'pdf_download_link_pt',
+        'cv-en': 'cv_online_btn_en', 'pdf-en-link': 'pdf_download_link_en',
         'about_title': 'about_title', 'about_text': 'about_text',
         'education_title': 'education_title', 'education-linkedin-label': 'education_linkedin_label',
         'education-academic-links-label': 'education_academic_links_label',
@@ -248,29 +311,43 @@
         'name-input': 'placeholder_name', 'email-input': 'placeholder_email',
         'message-input': 'placeholder_message', 'submit-btn': 'submit_btn'
       };
-      for (const [id, keyOrKeys] of Object.entries(elementsToUpdate)) {
+
+      for (const [id, key] of Object.entries(elementsToUpdate)) {
         const el = document.getElementById(id);
-        if (!el) continue;
-        if (Array.isArray(keyOrKeys)) {
-          const [textKey, ariaKey] = keyOrKeys;
-          el.innerText = c[textKey]; el.setAttribute('aria-label', c[ariaKey]);
-        } else {
-          const value = c[keyOrKeys];
-          if (keyOrKeys === 'about_text') { el.innerHTML = value; }
-          else if (keyOrKeys.startsWith('placeholder_')) { el.setAttribute('placeholder', value); }
-          else if (keyOrKeys === 'lang_nav_label') { el.setAttribute('aria-label', value); }
-          else {
+        const value = c[key];
+
+        if (el) {
+          if (key === 'about_text') {
+            el.innerHTML = value;
+          } else if (key.startsWith('placeholder_')) {
+            el.setAttribute('placeholder', value);
+          } else {
              el.innerText = value;
-             if (id === 'education-linkedin-label' || id === 'education-academic-links-label') { el.innerHTML = `<strong>${value}</strong>`; }
+             if (id === 'education-linkedin-label' || id === 'education-academic-links-label') {
+               el.innerHTML = `<strong>${value}</strong>`;
+             }
              if (id === 'cv-pt') el.href = `cv.html?lang=pt`;
              if (id === 'cv-en') el.href = `cv.html?lang=en`;
           }
         }
       }
-      // Atualiza listas (sem alterações)
-      const education = document.getElementById('education_list'); if (education) { education.innerHTML = ''; c.education_list.forEach(i => education.insertAdjacentHTML('beforeend', `<li>${i}</li>`)); }
-      const skills = document.getElementById('skills_list'); if (skills) { skills.innerHTML = ''; c.skills_list.forEach(i => skills.insertAdjacentHTML('beforeend', `<li>${i}</li>`)); }
-      const goals = document.getElementById('goals_list'); if (goals) { goals.innerHTML = ''; c.goals_list.forEach(i => goals.insertAdjacentHTML('beforeend', `<li>${i}</li>`)); }
+
+      // Atualiza listas (mantido igual)
+      const education = document.getElementById('education_list');
+      if (education) {
+        education.innerHTML = '';
+        c.education_list.forEach(i => education.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+      }
+      const skills = document.getElementById('skills_list');
+       if (skills) {
+        skills.innerHTML = '';
+        c.skills_list.forEach(i => skills.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+       }
+      const goals = document.getElementById('goals_list');
+       if (goals) {
+        goals.innerHTML = '';
+        c.goals_list.forEach(i => goals.insertAdjacentHTML('beforeend', `<li>${i}</li>`));
+       }
       const projectsList = document.getElementById('projects_list');
       if (projectsList) {
         const projectLinks = projectsList.getElementsByTagName('a');
@@ -279,59 +356,87 @@
             projectLinks[i].innerText = c.projects_list_items[i];
             const bellabeatLinkId = `project-bellabeat-link-${lang}`;
             if (projectLinks[i].id && (projectLinks[i].id.startsWith('project-bellabeat-link'))) {
-              projectLinks[i].href = `projeto-bellabeat.html?lang=${lang}`; projectLinks[i].id = bellabeatLinkId;
+              projectLinks[i].href = `projeto-bellabeat.html?lang=${lang}`;
+              projectLinks[i].id = bellabeatLinkId;
             }
           }
         }
       }
-      // Atualiza botões (sem alterações)
-      const btnPt = document.getElementById('lang-pt'); const btnEn = document.getElementById('lang-en');
-      btnPt.classList.toggle('active', lang === 'pt'); btnEn.classList.toggle('active', lang === 'en');
-      btnPt.setAttribute('aria-pressed', lang === 'pt'); btnEn.setAttribute('aria-pressed', lang === 'en');
+
+      // Atualiza botões (mantido igual)
+      document.getElementById('lang-pt').classList.toggle('active', lang === 'pt');
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
       document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
-      const cvPtBtn = document.getElementById('cv-pt'); const cvEnBtn = document.getElementById('cv-en');
-      if(cvPtBtn) cvPtBtn.classList.toggle('btn-outline', lang !== 'pt'); if(cvEnBtn) cvEnBtn.classList.toggle('btn-outline', lang !== 'en');
-      const pdfPtLink = document.getElementById('pdf-pt-link'); const pdfEnLink = document.getElementById('pdf-en-link');
-      if(pdfPtLink) pdfPtLink.style.display = (lang === 'pt') ? 'inline' : 'none'; if(pdfEnLink) pdfEnLink.style.display = (lang === 'en') ? 'inline' : 'none';
+
+      const cvPtBtn = document.getElementById('cv-pt');
+      const cvEnBtn = document.getElementById('cv-en');
+      if(cvPtBtn) cvPtBtn.classList.toggle('btn-outline', lang !== 'pt');
+      if(cvEnBtn) cvEnBtn.classList.toggle('btn-outline', lang !== 'en');
+
+      const pdfPtLink = document.getElementById('pdf-pt-link');
+      const pdfEnLink = document.getElementById('pdf-en-link');
+      if(pdfPtLink) pdfPtLink.style.display = (lang === 'pt') ? 'inline' : 'none';
+      if(pdfEnLink) pdfEnLink.style.display = (lang === 'en') ? 'inline' : 'none';
     }
-    document.addEventListener('DOMContentLoaded', () => { updateText('en'); });
+
+    // Inicializa o texto com o idioma inglês (mantido igual)
+    document.addEventListener('DOMContentLoaded', () => {
+      updateText('en');
+    });
   </script>
 
   <script>
-    // Script do formulário
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('contact-form');
       const statusDiv = document.getElementById('form-status');
       const submitButton = document.getElementById('submit-btn');
-      if (!form) { return; }
+
       form.addEventListener('submit', function(event) {
-        event.preventDefault();
+        event.preventDefault(); // Impede o envio padrão
+
         const formData = new FormData(form);
-        const currentLang = document.documentElement.lang.startsWith('pt') ? 'pt' : 'en';
+        const currentLang = document.documentElement.lang.startsWith('pt') ? 'pt' : 'en'; // Pega o idioma atual
         const successMsg = content[currentLang].form_success_msg;
         const errorMsg = content[currentLang].form_error_msg;
+
+        // Desabilita o botão e mostra um status de envio
         submitButton.disabled = true;
         statusDiv.innerText = (currentLang === 'pt' ? 'Enviando...' : 'Sending...');
-        statusDiv.className = 'form-status sending';
+        statusDiv.className = 'form-status sending'; // Classe para estilo (opcional)
 
-        // *** ENDPOINT ATUALIZADO AQUI ***
-        fetch("https://formspree.io/f/xwpwpley", {
-          method: "POST", body: formData, headers: { 'Accept': 'application/json' }
+        fetch("https://formspree.io/f/xqayrjnp", { // Seu endpoint Formspree
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
         }).then(response => {
           if (response.ok) {
-            statusDiv.innerText = successMsg; statusDiv.className = 'form-status success'; form.reset();
+            // Sucesso
+            statusDiv.innerText = successMsg;
+            statusDiv.className = 'form-status success';
+            form.reset(); // Limpa o formulário
           } else {
+            // Tenta obter mais detalhes do erro, se possível
             response.json().then(data => {
               if (Object.hasOwn(data, 'errors')) {
                  statusDiv.innerText = errorMsg + " " + data["errors"].map(error => error["message"]).join(", ");
-              } else { statusDiv.innerText = errorMsg; }
+              } else {
+                 statusDiv.innerText = errorMsg;
+              }
                statusDiv.className = 'form-status error';
             })
           }
         }).catch(error => {
-          statusDiv.innerText = errorMsg; statusDiv.className = 'form-status error';
+          // Erro de rede ou outro problema
+          statusDiv.innerText = errorMsg;
+          statusDiv.className = 'form-status error';
         }).finally(() => {
-           setTimeout(() => { submitButton.disabled = false; }, 1000);
+           // Reabilita o botão após o envio (com ou sem erro)
+           // Adiciona um pequeno delay para o usuário ver a mensagem antes do botão reativar
+           setTimeout(() => {
+             submitButton.disabled = false;
+           }, 1000);
         });
       });
     });
